@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:58:19 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/07 16:15:21 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:13:14 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ Contact *PhoneBook::getContact(void)
 
 void PhoneBook::addContact(void)
 {
-	this->_nbContact +=1;
-	if (this->_index < MAXCONTACT - 1)
+	if (this->_index < MAXCONTACT)
 		this->_index +=1;
 	else
 		this->_index = MAXCONTACT;
+	this->_nbContact +=1;
 	if (this->_nbContact > MAXCONTACT - 1)
 		this->_nbContact = 0;
 }
@@ -62,46 +62,53 @@ void truncField(std::string field)
 		std::cout << std::right << std::setw(10) << field << "|";
 }
 
-void PhoneBook::printContact(void)
+bool PhoneBook::printContact(void)
 {
 	std::string	tmp;
 	int			nb_index;
 
 	if (checkField(this) == false)
-		return;
+		return (true);
 	std::cout << "*__________.__________.__________.__________*" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-	for (int i = 0; i < this->_index - 1 ; i++)
+	std::cout << "*----------|----------|----------|----------*" << std::endl;
+	for (int i = 0; i < MAXCONTACT; i++)
 	{
 		std::cout << "|" << std::right << std::setw(10) << i + 1 << "|";
 		truncField(this->_phonebook[i].get_f_name());
 		truncField(this->_phonebook[i].get_l_name());
 		truncField(this->_phonebook[i].get_nickname());
 		std::cout << std::endl;
+		std::cout << "*----------|----------|----------|----------*" << std::endl;
 	}
-
 	std::cout << "Which index do you want to check ?" << std::endl;
 	getline(std::cin, tmp);
+	if(std::cin.eof() == 1)
+		return (false);
 	if (tmp.length() == 0)
 	{
 		std::cout << "Please enter a index between 1 and " << this->_index - 1 << std::endl;
-		return;
+		return (true);
 	}
 	for (int i = 0; i < tmp.length(); i++)
 	{
 		if (!isdigit(tmp[i]))
 		{
 			std::cout << "Please enter a index between 1 and " << this->_index - 1 << std::endl;
-			return;
+			return (true);
 		}
 	}
 	nb_index = std::stoi(tmp);
 	if (nb_index < 0 || nb_index > this->_index - 1)
 	{
 		std::cout << "Please enter a index between 1 and " << this->_index - 1 << std::endl;
-		return;
+		return (true);
 	}
-	std::cout << "You choose index " << nb_index << "gg !" << std::endl;
-
-	return;
+	std::cout << "You choose index " << nb_index << " :" << std::endl;
+	std::cout << "First name : " << this->_phonebook[nb_index - 1].get_f_name() << std::endl;
+	std::cout << "Last name : " << this->_phonebook[nb_index - 1].get_l_name() << std::endl;
+	std::cout << "Nickname : " << this->_phonebook[nb_index - 1].get_nickname() << std::endl;
+	std::cout << "Phone number : " << this->_phonebook[nb_index - 1].get_phone_number() << std::endl;
+	std::cout << "Darkest secret : " << this->_phonebook[nb_index - 1].get_darkest_secret() << std::endl;
+	return (true);
 }

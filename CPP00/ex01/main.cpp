@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 14:56:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/04/07 15:09:38 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:06:36 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,9 @@ int main()
 	{
 		std::cout << "What do you want to do : ADD, SEARCH or EXIT ?" << std::endl;
 		getline(std::cin, str);
-		// if(std::cin.eof() == 1) 
-		// {
-		// 	continue; /* CTRL D : infinite loop; Enter : okay */
-		// 	// break /* CTRL D : quit okay; Enter : quit too D: */
-		// }
-		if(str == "EXIT" || str == "")
+		if(std::cin.eof() == 1) 
+			break;
+		if(str == "EXIT")
 		{
 			std::cout << "Byebye." << std::endl;
 			break;
@@ -84,8 +81,11 @@ int main()
 		}
 		else if(str == "SEARCH")
 		{
-			PhoneBook.printContact();
-		}		
+			if (PhoneBook.printContact() == false)
+				break;
+		}
+		else
+			continue;
 	}
 	return (0);
 }
