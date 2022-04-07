@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 14:56:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/04/06 22:24:13 by maelle           ###   ########.fr       */
+/*   Updated: 2022/04/07 15:02:43 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,50 @@
 #include <string>
 #include <iostream>
 
+bool checkContact(Contact *contact, void (Contact::*f)(std::string))
+{
+	std::string tmp;
+
+	getline(std::cin, tmp);
+	if (tmp.length() == 0)
+	{
+		std::cout << "This field can't be empty." << std::endl;
+		return (false);
+	}
+	else
+		(contact->*f)(tmp);
+	return (true);
+}
+
+bool addContact(PhoneBook *PhoneBook)
+{
+	Contact *contact;
+	std::string tmp;
+
+	contact = PhoneBook->getContact();
+	std::cout << "I need some informations.\nCould you give me your contact first name ?" << std::endl;
+	if (checkContact(contact, &Contact::set_f_name) == false)
+		return (false);
+	std::cout << "Last name ?" << std::endl;
+	if (checkContact(contact, &Contact::set_l_name) == false)
+		return (false);
+	std::cout << "Nickname ?" <<  std::endl;
+	if (checkContact(contact, &Contact::set_nickname) == false)
+		return (false);
+	std::cout << "Phone number ?" << std::endl;
+	if (checkContact(contact, &Contact::set_phone_number) == false)
+		return (false);
+	std::cout << "Darkest secret ?" << std::endl;
+	if (checkContact(contact, &Contact::set_darkest_secret) == false)
+		return (false);
+	PhoneBook->addContact();
+	return (true);
+}
+
 int main()
 {
 	PhoneBook PhoneBook;
-	Contact *contact;
-	std::string tmp;
+	
 	std::string str;
 
 	std::cout << "Welcome to the PhoneBook." <<std::endl;
@@ -40,57 +79,8 @@ int main()
 		}
 		else if(str == "ADD")
 		{
-			contact = PhoneBook.getContact();
-			std::cout << "I need some informations.\nCould you give me your contact first name ?" << std::endl;
-			getline(std::cin, tmp);
-			if (tmp.length() == 0)
-			{
-				std::cout << "This field can't be empty." << std::endl;			
+			if (addContact(&PhoneBook) == false)
 				continue;
-			}
-			else
-				contact->set_f_name(tmp);
-
-			std::cout << "Last name ?" << std::endl;
-			getline(std::cin, tmp);
-			if (tmp.length() == 0)
-			{
-				std::cout << "This field can't be empty." << std::endl;			
-				continue;
-			}
-			else
-				contact->set_l_name(tmp);
-
-			std::cout << "Nickname ?" <<  std::endl;
-			getline(std::cin, tmp);
-			if (tmp.length() == 0)
-			{
-				std::cout << "This field can't be empty." << std::endl;			
-				continue;
-			}
-			else
-				contact->set_nickname(tmp);
-			
-			std::cout << "Phone number ?" << std::endl;
-			getline(std::cin, tmp);
-			if (tmp.length() == 0)
-			{
-				std::cout << "This field can't be empty." << std::endl;			
-				continue;
-			}
-			else
-				contact->set_phone_number(tmp);
-
-			std::cout << "Darkest secret ?" << std::endl;
-			getline(std::cin, tmp);
-			if (tmp.length() == 0)
-			{
-				std::cout << "This field can't be empty." << std::endl;			
-				continue;
-			}
-			else
-				contact->set_darkest_secret(tmp);
-			PhoneBook.addContact();
 		}
 		else if(str == "SEARCH")
 		{
