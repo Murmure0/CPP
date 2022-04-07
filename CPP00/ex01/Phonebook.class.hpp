@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:17:27 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/06 22:24:16 by maelle           ###   ########.fr       */
+/*   Updated: 2022/04/07 14:22:00 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class PhoneBook{
 	private:
 	Contact _phonebook[MAXCONTACT];
 	int _nbContact;
+	int	_index;
 };
 
 #endif

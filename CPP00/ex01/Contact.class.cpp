@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:51:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/06 22:24:15 by maelle           ###   ########.fr       */
+/*   Updated: 2022/04/07 13:15:20 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact(void){
 	return;

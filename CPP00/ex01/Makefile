@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
+#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 14:54:31 by maelle            #+#    #+#              #
-#    Updated: 2022/04/06 22:24:17 by maelle           ###   ########.fr        #
+#    Updated: 2022/04/07 13:14:42 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,26 +16,26 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-MAIN = main.cpp \
+RM = rm -rf
+
+SOURCES = main.cpp \
 		Contact.class.cpp \
 		Phonebook.class.cpp \
 
-SOURCES = $(MAIN)
+OBJECTS = $(SOURCES:%.cpp=%.o)
 
-OBJECTS = $(SOURCES:.c=.o)
+all :		$(NAME)
 
-all : $(NAME)
-
-$(NAME): $(OBJECTS)
-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
-	@echo "[\033[32m$(NAME) compiled\033[0m]"
+$(NAME):	$(OBJECTS)
+		@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+		@echo "[\033[32m$(NAME) compiled\033[0m]"
 
 
 clean:
-	/bin/rm -f $(OBJECTS) && make clean
+		$(RM) $(OBJECTS)
 	
 fclean: clean
-	/bin/rm -f $(NAME) && make fclean
+		$(RM) $(NAME)
 	
 re: fclean all
 
