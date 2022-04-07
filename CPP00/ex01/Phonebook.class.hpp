@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:17:27 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/07 14:22:00 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:19:46 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class PhoneBook{
 
 	void printContact(void);
 	void addContact(void);
+	bool checkField(PhoneBook *PhoneBook);
 	Contact *getContact(void);
 
 	private:
