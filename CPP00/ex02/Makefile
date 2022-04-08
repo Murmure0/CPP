@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/06 14:54:31 by maelle            #+#    #+#              #
-#    Updated: 2022/04/07 17:17:06 by mberthet         ###   ########.fr        #
+#    Created: 2022/04/07 17:17:42 by mberthet          #+#    #+#              #
+#    Updated: 2022/04/08 17:21:26 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
 CC = c++
 
@@ -18,9 +18,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-SOURCES = main.cpp \
-		Contact.class.cpp \
-		Phonebook.class.cpp \
+SOURCES = tests.cpp \
+		Account.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
