@@ -6,7 +6,7 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 17:17:42 by mberthet          #+#    #+#              #
-#    Updated: 2022/04/08 17:21:26 by mberthet         ###   ########.fr        #
+#    Updated: 2022/05/19 14:08:56 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJECTS = $(SOURCES:%.cpp=%.o)
 all :		$(NAME)
 
 $(NAME):	$(OBJECTS)
-		@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) && make clean
+		@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 		@echo "[\033[32m$(NAME) ready to use\033[0m]"
 
 

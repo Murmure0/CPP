@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:17:27 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/07 17:06:27 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:22:59 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@
 class PhoneBook{
 
 	public:
+
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	bool printContact(void);
-	void addContact(void);
-	bool checkField(PhoneBook *PhoneBook);
-	Contact *getContact(void);
+	bool	printContact(void);
+	void	addContact(void);
+	bool	checkField(PhoneBook *PhoneBook, int index);
+	Contact	*getContact(void);
 
 	private:
-	Contact _phonebook[MAXCONTACT];
-	int _nbContact;
-	int	_index;
+
+	Contact	_phonebook[MAXCONTACT];
+	int		_nbContact;
+	int		_index;
 };
 
 #endif

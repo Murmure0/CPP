@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:15:56 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/06 11:19:00 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:07:56 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class Contact{
 	
-
 	public :
 	
 	Contact(void);

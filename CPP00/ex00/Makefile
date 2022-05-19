@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
+#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 15:20:22 by maelle            #+#    #+#              #
-#    Updated: 2022/04/05 15:22:38 by maelle           ###   ########.fr        #
+#    Updated: 2022/05/19 15:00:49 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,24 +16,23 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-MAIN = megaphone.cpp 
+RM = rm -rf
 
-SOURCES = $(MAIN)
+SOURCES = megaphone.cpp \
 
 OBJECTS = $(SOURCES:.c=.o)
 
-all : $(NAME)
+all :		$(NAME)
 
-$(NAME): $(OBJECTS)
-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
-	@echo "[\033[32m$(NAME) compiled\033[0m]"
-
+$(NAME):	$(OBJECTS)
+		@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+		@echo "[\033[32m$(NAME) compiled\033[0m]"
 
 clean:
-	/bin/rm -f $(OBJECTS) && make clean
+	@$(RM) $(OBJECTS)
 	
 fclean: clean
-	/bin/rm -f $(NAME) && make fclean
+	@$(RM) $(NAME)
 	
 re: fclean all
 

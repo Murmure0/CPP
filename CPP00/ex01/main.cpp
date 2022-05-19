@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 14:56:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/04/07 17:06:36 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:49:20 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,7 @@ int main()
 	{
 		std::cout << "What do you want to do : ADD, SEARCH or EXIT ?" << std::endl;
 		getline(std::cin, str);
-		if(std::cin.eof() == 1) 
-			break;
-		if(str == "EXIT")
+		if(std::cin.eof() == 1 || str == "EXIT")
 		{
 			std::cout << "Byebye." << std::endl;
 			break;

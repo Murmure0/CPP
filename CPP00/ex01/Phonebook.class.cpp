@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:58:19 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/07 17:13:14 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:08:09 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ void PhoneBook::addContact(void)
 		this->_nbContact = 0;
 }
 
-bool PhoneBook::checkField(PhoneBook *PhoneBook)
+bool PhoneBook::checkField(PhoneBook *PhoneBook, int index)
 {
-	if ((this->_phonebook[0].get_f_name()).length() == 0 ||
-	(this->_phonebook[0].get_l_name()).length()  == 0 ||
-	(this->_phonebook[0].get_nickname()).length()  == 0 ||
-	(this->_phonebook[0].get_phone_number()).length()  == 0 ||
-	(this->_phonebook[0].get_darkest_secret()).length()  == 0)
+	if ((this->_phonebook[index].get_f_name()).length() == 0 ||
+	(this->_phonebook[index].get_l_name()).length()  == 0 ||
+	(this->_phonebook[index].get_nickname()).length()  == 0 ||
+	(this->_phonebook[index].get_phone_number()).length()  == 0 ||
+	(this->_phonebook[index].get_darkest_secret()).length()  == 0)
 	{
 		std::cout << "No entry yet." << std::endl;
 		return (false);
@@ -67,7 +67,7 @@ bool PhoneBook::printContact(void)
 	std::string	tmp;
 	int			nb_index;
 
-	if (checkField(this) == false)
+	if (checkField(this, 0) == false)
 		return (true);
 	std::cout << "*__________.__________.__________.__________*" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
@@ -99,7 +99,8 @@ bool PhoneBook::printContact(void)
 		}
 	}
 	nb_index = std::stoi(tmp);
-	if (nb_index < 0 || nb_index > this->_index - 1)
+	std::cout << nb_index << " et " << this->_index << std::endl;
+	if (nb_index < 0 || !checkField(this, (nb_index - 1)))
 	{
 		std::cout << "Please enter a index between 1 and " << this->_index - 1 << std::endl;
 		return (true);

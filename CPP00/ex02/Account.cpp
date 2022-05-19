@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:17:51 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/08 18:43:07 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:43:56 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Account::makeDeposit(int deposite)
 	this->_amount += deposite;
 	std::cout << ";amount:" << this->_amount;
 	this->_nbDeposits += 1;
-	std::cout << ";nb_deposits:" << Account::_nbDeposits << std::endl;
+	std::cout << ";nb_deposits:" << this->_nbDeposits << std::endl;
 	Account::_totalNbDeposits += 1;
 	Account::_totalAmount += deposite;
 }

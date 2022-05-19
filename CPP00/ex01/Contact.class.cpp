@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:51:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/04/07 13:15:20 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:07:41 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,19 @@ Contact::~Contact(void){
 std::string Contact::get_f_name(void){
 	return this->_first_name;
 }
+
 std::string Contact::get_l_name(void){
 	return this->_last_name;
 }
+
 std::string Contact::get_nickname(void){
 	return this->_nickname;
 }
+
 std::string Contact::get_phone_number(void){
 	return this->_phone_number;
 }
+
 std::string Contact::get_darkest_secret(void){
 	return this->_darkest_secret;
 }
@@ -67,4 +71,3 @@ void Contact::set_darkest_secret(std::string d_secret)
 	this->_darkest_secret = d_secret;
 	return;
 }
-
