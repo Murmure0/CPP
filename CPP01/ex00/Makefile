@@ -1,14 +1,19 @@
-NAME = megaphone
+NAME = BraiiiiiiinnnzzzZ
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-MAIN = megaphone.cpp 
+RM = rm -rf
+
+MAIN =	main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 SOURCES = $(MAIN)
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:.cpp=.o)
 
 all : $(NAME)
 
@@ -18,10 +23,10 @@ $(NAME): $(OBJECTS)
 
 
 clean:
-	/bin/rm -f $(OBJECTS) && make clean
+	$(RM) $(OBJECTS) && make clean
 	
 fclean: clean
-	/bin/rm -f $(NAME) && make fclean
+	$(RM) $(NAME) && make fclean
 	
 re: fclean all
 

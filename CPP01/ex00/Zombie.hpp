@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:59:02 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/19 16:16:38 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:37:55 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 
 class Zombie{
 public :
-
 Zombie();
 ~Zombie();
+
 void	announce(void);
+void	setName(std::string name);
 
 private :
 std::string _name;
 };
+
+Zombie*	newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif
