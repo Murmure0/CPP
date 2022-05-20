@@ -6,12 +6,12 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 14:56:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/05/19 11:49:20 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:46:23 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
+#include "ClassContact.hpp"
+#include "ClassPhonebook.hpp"
 
 #include <string>
 #include <iostream>
@@ -20,15 +20,26 @@ bool checkContact(Contact *contact, void (Contact::*f)(std::string))
 {
 	std::string tmp;
 
-	getline(std::cin, tmp);
-	if (tmp.length() == 0)
+	while (1)
 	{
-		std::cout << "This field can't be empty." << std::endl;
-		return (false);
+		std::getline(std::cin, tmp);
+		if (std::cin.eof() == 1)
+			break;
+		else if(tmp.length() == 0)
+		{
+			std::cout << "This field can't be empty." << std::endl;
+			continue ;
+		}
+		else
+		{
+			(contact->*f)(tmp);
+			break;
+		}
 	}
+	if (std::cin.eof() == 1)
+		return (false);
 	else
-		(contact->*f)(tmp);
-	return (true);
+		return (true);
 }
 
 bool addContact(PhoneBook *PhoneBook)
@@ -38,19 +49,19 @@ bool addContact(PhoneBook *PhoneBook)
 
 	contact = PhoneBook->getContact();
 	std::cout << "I need some informations.\nCould you give me your contact first name ?" << std::endl;
-	if (checkContact(contact, &Contact::set_f_name) == false)
+	if (!checkContact(contact, &Contact::set_f_name))
 		return (false);
 	std::cout << "Last name ?" << std::endl;
-	if (checkContact(contact, &Contact::set_l_name) == false)
+	if (!checkContact(contact, &Contact::set_l_name))
 		return (false);
 	std::cout << "Nickname ?" <<  std::endl;
-	if (checkContact(contact, &Contact::set_nickname) == false)
+	if (!checkContact(contact, &Contact::set_nickname))
 		return (false);
 	std::cout << "Phone number ?" << std::endl;
-	if (checkContact(contact, &Contact::set_phone_number) == false)
+	if (!checkContact(contact, &Contact::set_phone_number))
 		return (false);
 	std::cout << "Darkest secret ?" << std::endl;
-	if (checkContact(contact, &Contact::set_darkest_secret) == false)
+	if (!checkContact(contact, &Contact::set_darkest_secret))
 		return (false);
 	PhoneBook->addContact();
 	return (true);
@@ -66,7 +77,7 @@ int main()
 	while (1)
 	{
 		std::cout << "What do you want to do : ADD, SEARCH or EXIT ?" << std::endl;
-		getline(std::cin, str);
+		std::getline(std::cin, str);
 		if(std::cin.eof() == 1 || str == "EXIT")
 		{
 			std::cout << "Byebye." << std::endl;
@@ -75,12 +86,18 @@ int main()
 		else if(str == "ADD")
 		{
 			if (addContact(&PhoneBook) == false)
-				continue;
+			{
+				std::cout << "Bye." << std::endl;
+				break;
+			}
 		}
 		else if(str == "SEARCH")
 		{
 			if (PhoneBook.printContact() == false)
+			{
+				std::cout << "Goodbye." << std::endl;
 				break;
+			}
 		}
 		else
 			continue;

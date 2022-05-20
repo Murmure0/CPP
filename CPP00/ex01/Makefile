@@ -6,7 +6,7 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 14:54:31 by maelle            #+#    #+#              #
-#    Updated: 2022/05/19 14:08:44 by mberthet         ###   ########.fr        #
+#    Updated: 2022/05/19 15:26:33 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = main.cpp \
-		Contact.class.cpp \
-		Phonebook.class.cpp \
+		ClassContact.cpp \
+		ClassPhonebook.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
