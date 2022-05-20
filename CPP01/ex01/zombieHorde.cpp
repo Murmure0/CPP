@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 11:45:23 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/20 12:10:41 by mberthet         ###   ########.fr       */
+/*   Created: 2022/05/20 13:31:50 by mberthet          #+#    #+#             */
+/*   Updated: 2022/05/20 15:17:10 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie* zombieHorde(int N, std::string name)
 {
-	return ;
-}
+	Zombie* firstZ;
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->_name << " has been destroyed." << std::endl;
-	return ;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << this->_name << ":  BraiiiiiiinnnzzzZ..." << std::endl;
-	return ;
-}
-
-void Zombie::setName(std::string name)
-{
-	this->_name = name;
-	return ;
+	firstZ = new Zombie[N];
+	for (int i = 0; i < N; i++)
+	{
+		firstZ[i].setName(name);
+	}
+	return (firstZ);
 }

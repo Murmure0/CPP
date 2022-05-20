@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 10:17:27 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/19 13:22:59 by mberthet         ###   ########.fr       */
+/*   Created: 2022/05/20 13:27:47 by mberthet          #+#    #+#             */
+/*   Updated: 2022/05/20 13:36:16 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#include "Zombie.hpp"
 
-# include "Contact.class.hpp"
-# define MAXCONTACT 8
+Zombie::Zombie(void){
+	return ;
+}
 
-class PhoneBook{
+Zombie::~Zombie(void){
+	return ;
+}
 
-	public:
+void Zombie::setName(std::string name){
+	this->_name = name;
+	return ;
+}
 
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	bool	printContact(void);
-	void	addContact(void);
-	bool	checkField(PhoneBook *PhoneBook, int index);
-	Contact	*getContact(void);
-
-	private:
-
-	Contact	_phonebook[MAXCONTACT];
-	int		_nbContact;
-	int		_index;
-};
-
-#endif
+void Zombie::announce(void){
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}

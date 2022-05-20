@@ -1,4 +1,4 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = MoarBrainz
 
 CC = c++
 
@@ -8,8 +8,7 @@ RM = rm -rf
 
 MAIN =	main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
+		zombieHorde.cpp \
 
 SOURCES = $(MAIN)
 
