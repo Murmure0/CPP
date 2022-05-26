@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 16:33:50 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/24 13:48:36 by mberthet         ###   ########.fr       */
+/*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
+/*   Updated: 2022/05/26 15:00:19 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string name) : _name(name)
+int main()
 {
-}
+	class Harl one;
 
-HumanB::~HumanB()
-{
-}
-
-void	HumanB::attack()
-{
-	std::cout << this->_name << " attacks with their " << this->_W->getType() <<std::endl;
-	return ;
-}
-
-void	HumanB::setWeapon(Weapon &weapon)
-{
-	this->_W = &weapon;
-	return ;
+	one.complain("debug");
+	one.complain("info");
+	one.complain("warning");
+	one.complain("error");
 }
