@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 14:39:51 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 11:41:11 by maelle           ###   ########.fr       */
+/*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
+/*   Updated: 2022/05/29 13:28:22 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-# define HARL_H
+#include "Harl.hpp"
 
-# include <string>
-# include <iostream>
-# include <functional>
-# include <map>
-
-class Harl
+int main()
 {
-	public :
-	Harl();
-	~Harl();
+	class Harl one;
 
-	void complain(std::string level);
-
-	private :
-	void	_debug(void);
-	void	_info(void);
-	void	_warning(void);
-	void	_error(void);
-};
-
-#endif
+	one.complain("debug");
+	// one.complain("info");
+	// one.complain("warning");
+	// one.complain("error");
+}

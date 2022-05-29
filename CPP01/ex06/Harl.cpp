@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:40:33 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 13:04:45 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/29 13:28:58 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,31 @@ void Harl::_error(void)
 	std::cout << "[ ERROR ] \nThis is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level)
+void Harl::complain(const std::string level)
 {
 	std::string message[4] = {"debug", "info", "error", "warning"};
 	void (Harl::*f[4])(void) ={ &Harl::_debug, &Harl::_error, &Harl::_info, &Harl::_warning};
+	int x;
 
-	for( int i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (message[i] == level)
-		{
-			(this->*f[i])();
-			return ;
-		}
+			x = i;
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+
+	switch(x)
+	{
+		case 0 :
+			(this->*f[x])();
+		case 1 :
+			(this->*f[x])();
+		case 2 :
+			(this->*f[x])();
+		case 3 :
+			(this->*f[x])();
+			break ;
+		default :
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 	return ;
 }

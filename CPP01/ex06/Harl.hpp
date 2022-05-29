@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:39:51 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 11:41:11 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/29 12:35:32 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <string>
 # include <iostream>
 # include <functional>
-# include <map>
+# include <string>
+# include <sstream>
 
 class Harl
 {
