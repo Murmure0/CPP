@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 12:26:17 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/30 10:35:28 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main()
 {
-	class Harl one;
+	Harl one;
 
-	one.complain("debug");
-	one.complain("info");
-	one.complain("warning");
-	one.complain("error");
+	one.complain("DEBUG");
+	one.complain("INFO");
+	one.complain("WARNING");
+	one.complain("ERROR");
 
 	one.complain("hello");
 	one.complain("");
-	one.complain("123");
+	one.complain("123 456 789 ;");
 }

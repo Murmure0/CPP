@@ -6,18 +6,21 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 13:28:22 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/30 10:31:35 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	class Harl one;
+	Harl one;
 
-	one.complain("debug");
-	// one.complain("info");
-	// one.complain("warning");
-	// one.complain("error");
+	if (ac != 2)
+	{
+		std::cout << "Please give one of the following argument : DEBUG, INFO, ERROR or WARNING." << std::endl;
+		return (1);
+	}
+	one.complain(av[1]);
+	return (0);
 }

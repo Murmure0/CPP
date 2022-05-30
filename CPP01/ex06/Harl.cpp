@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:40:33 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/29 13:28:58 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/30 10:24:46 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,14 @@ void Harl::_error(void)
 
 void Harl::complain(const std::string level)
 {
-	std::string message[4] = {"debug", "info", "error", "warning"};
-	void (Harl::*f[4])(void) ={ &Harl::_debug, &Harl::_error, &Harl::_info, &Harl::_warning};
+	std::string message[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
+	void (Harl::*f[4])(void) ={ &Harl::_debug, 
+								&Harl::_info, 
+								&Harl::_warning, 
+								&Harl::_error};
+	
 	int x;
-
 	for (int i = 0; i < 4; i++)
 	{
 		if (message[i] == level)
@@ -52,13 +56,13 @@ void Harl::complain(const std::string level)
 	switch(x)
 	{
 		case 0 :
-			(this->*f[x])();
+			(this->*f[0])();
 		case 1 :
-			(this->*f[x])();
+			(this->*f[1])();
 		case 2 :
-			(this->*f[x])();
+			(this->*f[2])();
 		case 3 :
-			(this->*f[x])();
+			(this->*f[3])();
 			break ;
 		default :
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

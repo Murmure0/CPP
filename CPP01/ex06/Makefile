@@ -6,11 +6,11 @@
 #    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/29 11:43:07 by maelle            #+#    #+#              #
-#    Updated: 2022/05/29 11:45:48 by maelle           ###   ########.fr        #
+#    Updated: 2022/05/30 10:26:32 by maelle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = hardFilter
+NAME = harlFilter
 
 CC = c++
 
