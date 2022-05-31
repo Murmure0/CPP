@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:33:50 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/31 13:17:52 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:47:15 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ HumanB::~HumanB()
 
 void	HumanB::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_W->getType() <<std::endl;
+	if (!this->_W)
+		std::cout << this->_name << " attacks with their bare hands." << std::endl;
+	else
+		std::cout << this->_name << " attacks with their " << this->_W->getType() << std::endl;
 	return ;
 }
 

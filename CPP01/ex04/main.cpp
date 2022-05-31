@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:41:14 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/31 13:27:29 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:55:39 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int main(int ac, char **av)
 	{
 		str_buff.erase(found, ocDel.size());
 		str_buff.insert(found, ocChg);
-		found = str_buff.find(ocDel, (found + 1));
+		found = str_buff.find(ocDel, (found + ocChg.size()));
 	}
 	outfile << str_buff.c_str();
 	outfile.close();

@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 11:43:23 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/20 12:09:31 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:35:46 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 
 	newZ = newZombie("Newz");
 	newZ->announce();
-	randomChump("Chump");
+	randomChump("Bob");
 	delete(newZ);
 	return (0);
 }

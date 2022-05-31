@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    randomChump.cpp                                   :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 11:57:39 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/20 12:04:05 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:35:24 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void randomChump(std::string name)
 {
 	Zombie Chump;
 
-	Chump.setName("Chump");
+	Chump.setName(name);
 	Chump.announce();
 	return ;
 }

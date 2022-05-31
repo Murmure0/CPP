@@ -6,7 +6,7 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 11:41:00 by mberthet          #+#    #+#              #
-#    Updated: 2022/05/24 11:41:03 by mberthet         ###   ########.fr        #
+#    Updated: 2022/05/31 14:44:18 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ex04
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
@@ -26,7 +26,7 @@ OBJECTS = $(SOURCES:%.cpp=%.o)
 all :		$(NAME)
 
 $(NAME):	$(OBJECTS)
-		@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+		@$(CC)  $(OBJECTS) -o $(NAME)
 		@echo "[\033[32m$(NAME) ready to use\033[0m]"
 
 

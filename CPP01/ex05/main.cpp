@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/31 11:34:51 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:03:43 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	one.complain("ERROR");
 	std::cout << "   ---   " << std::endl;
 
-	one.complain("hello");
-	one.complain("");
+	one.complain("ERROR ");
 	one.complain("123 456 789 ;");
+	one.complain("");
 }
