@@ -6,15 +6,15 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:59:02 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/20 11:37:55 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:20:07 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
+
+# include <string>
+# include <iostream>
 
 class Zombie{
 public :

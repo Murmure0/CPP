@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:41:03 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/30 10:31:35 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/31 13:29:41 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cout << "Please give one of the following argument : DEBUG, INFO, ERROR or WARNING." << std::endl;
+		std::cout << "Please enter one of the following argument : \"DEBUG\", \"INFO\", \"WARNING\" or \"ERROR\"" << std::endl;
 		return (1);
 	}
 	one.complain(av[1]);

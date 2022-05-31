@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:40:33 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/30 10:36:42 by maelle           ###   ########.fr       */
+/*   Updated: 2022/05/31 11:34:45 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void Harl::complain(std::string level)
 			return ;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	std::cout << "Please enter one of the following argument : \"DEBUG\", \"INFO\", \"WARNING\" or \"ERROR\"" << std::endl;
 	return ;
 }

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
+#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/26 14:39:27 by mberthet          #+#    #+#              #
-#    Updated: 2022/05/30 10:33:23 by maelle           ###   ########.fr        #
+#    Updated: 2022/05/31 11:35:12 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = ex05
 
 CC = c++
 

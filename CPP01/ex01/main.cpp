@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:16:46 by mberthet          #+#    #+#             */
-/*   Updated: 2022/05/20 15:31:18 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:21:08 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main()
 	for(int i = 0; i < N; i++)
 		firstZ->announce();
 	delete [] firstZ;
-	//system("leaks MoarBrainz");
 	return (0);
 }
