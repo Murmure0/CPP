@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/29 11:43:07 by maelle            #+#    #+#              #
-#    Updated: 2022/05/31 16:13:18 by mberthet         ###   ########.fr        #
+#    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
+#    Updated: 2022/06/02 14:07:31 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = ex01
 
 CC = c++
 
@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = main.cpp \
-		Harl.cpp \
+		Fixed.cpp \
 
 
 OBJECTS = $(SOURCES:%.cpp=%.o)

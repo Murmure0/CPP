@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/29 11:43:07 by maelle            #+#    #+#              #
-#    Updated: 2022/05/31 16:13:18 by mberthet         ###   ########.fr        #
+#    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
+#    Updated: 2022/05/31 16:08:31 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = ex00
 
 CC = c++
 
