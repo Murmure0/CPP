@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:57:00 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/06 16:58:46 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:46:54 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ClapTrap&	operator=(ClapTrap const & rhs);
 void		attack(const std::string& target);
 void		takeDamage(unsigned int amount);
 void		beRepaired(unsigned int amount);
+void		getInfos(void);
 
 private :
 
