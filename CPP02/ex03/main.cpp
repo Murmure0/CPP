@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:25:18 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/06 15:43:15 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:53:11 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int main()
 	// Point const side_point(3,1);
 	// Point const vertex_point(2,2);
 
-	std::cout << "Inside :" << bsp(a, b, c, inside_point) << std::endl;
-	std::cout << "Outside :" << bsp(a, b, c, outside_point) << std::endl;
-	std::cout << "Side :" << bsp(a, b, c, side_point) << std::endl;
+	std::cout << "Inside : " << bsp(a, b, c, inside_point) << std::endl;
+	std::cout << "Outside : " << bsp(a, b, c, outside_point) << std::endl;
+	std::cout << "Side : " << bsp(a, b, c, side_point) << std::endl;
 	std::cout << "Vertex : " << bsp(a, b, c, vertex_point) << std::endl;
 }
