@@ -6,11 +6,11 @@
 #    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/07 16:20:06 by maelle           ###   ########.fr        #
+#    Updated: 2022/06/07 16:52:24 by maelle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 
 CC = c++
 
@@ -20,7 +20,8 @@ RM = rm -rf
 
 SOURCES = main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp
+		ScavTrap.cpp \
+		FragTrap.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:25:21 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 15:52:57 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/07 16:26:26 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class ScavTrap : public ClapTrap{
 
-	public :
+public :
 
 	ScavTrap( std::string name );
 	ScavTrap( ScavTrap const& );
