@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 16:09:34 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 10:22:09 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/07 11:24:54 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/07 13:46:31 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FIXED_HPP
-# define _FIXED_HPP
+#include "ScavTrap.hpp"
 
-# include <iostream>
+ScavTrap::ScavTrap ( std::string name ) : ClapTrap(name)
+{
+	std::cout << "Default ScavTrap constructor." << std::endl;
+}
 
-class Fixed{
+ScavTrap::~ScavTrap( void )
+{
+	std::cout << "Default ScavTrap destructor." << std::endl;
+}
 
-public :
+ScavTrap::ScavTrap( ScavTrap const& src )
+{
+	std::cout << "ScavTrap Copy constructor." << std::endl;
+	*this = src;
+}
 
-Fixed( void );
-Fixed( const Fixed& );
-~Fixed( void );
-
-Fixed&	operator=( Fixed const & rhs );
-
-void	setRawBits( int const raw ) ;
-int		getRawBits( void ) const;
-
-
-private :
-
-static const int	_fract = 8;
-int					_FixedPtvalue;
-};
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:57:00 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 13:17:24 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:18:00 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		takeDamage(unsigned int amount);
 void		beRepaired(unsigned int amount);
 void		getInfos(void);
 
-private :
+protected :
 
 std::string				_name;
 unsigned int			_HitPts;

@@ -6,7 +6,7 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/07 10:18:32 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/06 15:56:23 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = main.cpp \
-		Fixed.cpp \
-
+		ClapTrap.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

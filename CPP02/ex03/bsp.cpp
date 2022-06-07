@@ -6,19 +6,19 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 10:47:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/06 15:49:51 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:31:37 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-float vect_prod(Point x, Point point)
+float	vect_prod( Point x, Point point )
 {
 	float ret = ((float)x.getX() * (float)point.getY()) - ((float)x.getY() * (float)point.getX());
 	return ret;
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
+bool	bsp( Point const a, Point const b, Point const c, Point const point )
 {
 	Point ab((a.getX() - b.getX()), (a.getY() - b.getY()));
 	Point bc((b.getX() - c.getX()), (b.getY() - c.getY()));

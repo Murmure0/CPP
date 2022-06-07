@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:09:23 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/03 10:18:22 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:19:43 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,32 @@ Fixed::Fixed( void ) : _FixedPtvalue(0)
 	return ;
 }
 
-Fixed::~Fixed(void)
+Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& src)
+Fixed::Fixed( const Fixed& src )
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
-Fixed& Fixed::operator=(Fixed const & rhs)
+Fixed& Fixed::operator=( Fixed const & rhs )
 {
 	if (this != &rhs)
 		this->_FixedPtvalue = rhs.getRawBits();
 	return *this;
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits( int const raw )
 {
 	this->_FixedPtvalue = raw;
 	return ;
 }
 
-int Fixed::getRawBits(void) const{
+int Fixed::getRawBits( void ) const{
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_FixedPtvalue;
 }
-
-
-

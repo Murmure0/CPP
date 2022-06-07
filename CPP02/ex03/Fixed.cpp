@@ -6,13 +6,11 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:09:23 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/03 17:03:19 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:32:59 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-/*Constructors/Destructors*/
 
 Fixed::Fixed( void ) : _FixedPtvalue(0)
 {
@@ -32,28 +30,29 @@ Fixed::Fixed( const float value ) : _FixedPtvalue(int(roundf(value * (1 <<_fract
 	return ;
 }
 
-Fixed::~Fixed(void)
+Fixed::~Fixed( void )
 {
 	//std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& src)
+Fixed::Fixed( const Fixed& src )
 {
 	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
-/*Operateurs arithmetiques*/
 
-Fixed& Fixed::operator=(Fixed const & rhs)
+/* Operateurs arithmetiques */
+
+Fixed&	Fixed::operator=( Fixed const & rhs )
 {
 	if (this != &rhs)
 		this->_FixedPtvalue = rhs.getRawBits();
 	return *this;
 }
 
-Fixed Fixed::operator+(Fixed const & rhs) const
+Fixed	Fixed::operator+( Fixed const & rhs ) const
 {
 	Fixed ret;
 
@@ -61,7 +60,7 @@ Fixed Fixed::operator+(Fixed const & rhs) const
 	return ret;
 }
 
-Fixed Fixed::operator-(Fixed const & rhs) const
+Fixed	Fixed::operator-( Fixed const & rhs ) const
 {
 	Fixed ret;
 
@@ -69,7 +68,7 @@ Fixed Fixed::operator-(Fixed const & rhs) const
 	return ret;
 }
 
-Fixed Fixed::operator*(Fixed const & rhs) const
+Fixed	Fixed::operator*( Fixed const & rhs ) const
 {
 	Fixed ret;
 
@@ -77,7 +76,7 @@ Fixed Fixed::operator*(Fixed const & rhs) const
 	return ret;
 }
 
-Fixed Fixed::operator/(Fixed const & rhs) const
+Fixed	Fixed::operator/( Fixed const & rhs ) const
 {
 	Fixed ret;
 
@@ -85,38 +84,42 @@ Fixed Fixed::operator/(Fixed const & rhs) const
 	return ret;
 }
 
-/*Operateurs de comparaison*/
-int		Fixed::operator>(Fixed const & rhs) const
+
+/* Operateurs de comparaison */
+
+int		Fixed::operator>( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue > rhs._FixedPtvalue);
 }
 
-int		Fixed::operator<(Fixed const & rhs) const
+int		Fixed::operator<( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue < rhs._FixedPtvalue);
 }
 
-int		Fixed::operator>=(Fixed const & rhs) const
+int		Fixed::operator>=( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue >= rhs._FixedPtvalue);
 }
 
-int		Fixed::operator<=(Fixed const & rhs) const
+int		Fixed::operator<=( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue <= rhs._FixedPtvalue);
 }
 
-int		Fixed::operator==(Fixed const & rhs) const
+int		Fixed::operator==( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue == rhs._FixedPtvalue);
 }
 
-int		Fixed::operator!=(Fixed const & rhs) const
+int		Fixed::operator!=( Fixed const & rhs ) const
 {
 	return (this->_FixedPtvalue != rhs._FixedPtvalue);
 }
 
-/*Operateur ++/-- */
+
+/* Operateur ++/-- */
+
 Fixed&	Fixed::operator++()
 {
 	this->_FixedPtvalue++;
@@ -141,9 +144,9 @@ Fixed&	Fixed::operator--(int)
 	return (*this);
 }
 
-/*Fonction min/max Overloaded */
+/* Fonction min/max */
 
-float Fixed::min(Fixed &a, Fixed &b)
+float	Fixed::min( Fixed &a, Fixed &b )
 {
 	if (a < b)
 		return(a.toFloat());
@@ -151,7 +154,7 @@ float Fixed::min(Fixed &a, Fixed &b)
 		return(b.toFloat());
 }
 
-float Fixed::min(const Fixed &a, const Fixed &b)
+float	Fixed::min( const Fixed &a, const Fixed &b )
 {
 	if (a < b)
 		return(a.toFloat());
@@ -159,7 +162,7 @@ float Fixed::min(const Fixed &a, const Fixed &b)
 		return(b.toFloat());
 }
 
-float Fixed::max(Fixed &a, Fixed &b)
+float	Fixed::max( Fixed &a, Fixed &b )
 {
 	if (a > b)
 		return(a.toFloat());
@@ -167,7 +170,7 @@ float Fixed::max(Fixed &a, Fixed &b)
 		return(b.toFloat());
 }
 
-float Fixed::max(const Fixed &a, const Fixed &b)
+float	Fixed::max( const Fixed &a, const Fixed &b )
 {
 	if (a > b)
 		return(a.toFloat());
@@ -175,32 +178,34 @@ float Fixed::max(const Fixed &a, const Fixed &b)
 		return(b.toFloat());
 }
 
-/*Other members functions*/
-void Fixed::setRawBits(int const raw)
+
+/* Other members functions */
+
+void	Fixed::setRawBits( int const raw )
 {
 	this->_FixedPtvalue = raw;
 	return ;
 }
 
-int Fixed::getRawBits(void) const{
+int		Fixed::getRawBits( void ) const{
 	return this->_FixedPtvalue;
 }
 
-float Fixed::toFloat(void) const
+float	Fixed::toFloat( void ) const
 {
 	return (float(this->_FixedPtvalue) / ( 1 << _fract));
 }
 
-int Fixed::toInt(void) const
+int		Fixed::toInt( void ) const
 {
 	return (this->_FixedPtvalue >> _fract);
 }
 
 
-/* redir overload */
+/* << overload */
 
-std::ostream &	operator<<(std::ostream & o, Fixed const & i)
+std::ostream&	operator<<( std::ostream & o, Fixed const & i )
 {
-	o  << i.toFloat();
+	o << i.toFloat();
 	return o;
 }
