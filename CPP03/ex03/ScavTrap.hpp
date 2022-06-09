@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:25:21 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 16:26:26 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/09 11:28:32 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap{
+class ScavTrap : virtual public ClapTrap{
 
-public :
+	public :
 
+	ScavTrap();
 	ScavTrap( std::string name );
 	ScavTrap( ScavTrap const& );
 	~ScavTrap();

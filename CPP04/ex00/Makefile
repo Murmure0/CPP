@@ -6,11 +6,11 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/09 11:47:27 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/09 15:31:07 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex00
 
 CC = c++
 
@@ -19,10 +19,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp \
-		DiamondTrap.cpp
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

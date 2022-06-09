@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:57:00 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 13:17:24 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/09 10:52:52 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ClapTrap{
 
 public:
 
+ClapTrap();
 ClapTrap(std::string name);
 ClapTrap(const ClapTrap&);
 ~ClapTrap();
@@ -31,6 +32,7 @@ void		attack(const std::string& target);
 void		takeDamage(unsigned int amount);
 void		beRepaired(unsigned int amount);
 void		getInfos(void);
+unsigned int	getAtk();
 
 private :
 

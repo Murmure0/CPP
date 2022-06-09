@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 10:46:44 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/09 15:37:04 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/09 14:39:47 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/09 15:28:45 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
 
-class DiamondTrap : public FragTrap, public ScavTrap {
+# include "Animal.hpp"
+
+class Dog : public Animal {
 
 public :
 
-	DiamondTrap();
-	DiamondTrap( std::string name );
-	DiamondTrap( DiamondTrap const & );
-	~DiamondTrap();
+	Dog();
+	Dog( std::string type );
+	Dog( Dog const & );
+	~Dog();
 
-	DiamondTrap&	operator=(DiamondTrap const & rhs);
+	Dog& operator=( Dog const & );
 
-	void			attack( std::string const & target );
-	void			whoAmI();
-	void			getInfos();
-	
-private :
+	std::string		getType( void ) const;
+	virtual void	makeSound( void ) const;
 
-	std::string		_name;
+protected :
+	std::string		_type;
 };

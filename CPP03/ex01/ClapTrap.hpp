@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:57:00 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 15:59:38 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/09 10:53:04 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ClapTrap{
 
 public:
 
+ClapTrap();
 ClapTrap(std::string name);
 ClapTrap(const ClapTrap&);
 ~ClapTrap();

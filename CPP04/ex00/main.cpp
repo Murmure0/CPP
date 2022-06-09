@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 10:46:44 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/09 15:37:04 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/09 14:39:31 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/09 15:55:12 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap {
+int main()
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	meta->getType();
 
-public :
 
-	DiamondTrap();
-	DiamondTrap( std::string name );
-	DiamondTrap( DiamondTrap const & );
-	~DiamondTrap();
-
-	DiamondTrap&	operator=(DiamondTrap const & rhs);
-
-	void			attack( std::string const & target );
-	void			whoAmI();
-	void			getInfos();
+	//delete meta;
 	
-private :
-
-	std::string		_name;
-};
+	return 0;
+}

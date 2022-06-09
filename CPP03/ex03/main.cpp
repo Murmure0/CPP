@@ -3,45 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:56:36 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/07 16:54:47 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/09 14:35:18 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	FragTrap Poppy("Poppy");
-	FragTrap PoppyBis(Poppy);
-	FragTrap Ju("Ju");
-
-	std::cout << std::endl;
-	Poppy.highFivesGuys();
-	PoppyBis.highFivesGuys();
+	std::cout << "DIAMONDTRAP TEST :" << std::endl;
 	std::cout << std::endl;
 
-	Ju.attack("Poppy");
-	Poppy.takeDamage(Ju.getAtk());
-	Ju.attack("Poppy");
-	Poppy.takeDamage(Ju.getAtk());
-	Ju.attack("Poppy");
-	Poppy.takeDamage(Ju.getAtk());
-	Ju.attack("Poppy");
-	Poppy.takeDamage(Ju.getAtk());
+	DiamondTrap Lucy("Lucy");
 	std::cout << std::endl;
-	Ju.getInfos();
-	Poppy.getInfos();
-	PoppyBis.getInfos();
+	DiamondTrap LucyBis(Lucy);
 	std::cout << std::endl;
-	Ju.beRepaired(1);
-	Poppy.beRepaired(1);
-	PoppyBis.beRepaired(1);
+	DiamondTrap Bob("Bob");
 	std::cout << std::endl;
-	Ju.getInfos();
-	Poppy.getInfos();
-	PoppyBis.getInfos();
+
+	Lucy.whoAmI();
+	LucyBis.whoAmI();
+	Bob.whoAmI();
+	std::cout << std::endl;
+
+	Lucy.attack("Bob");
+	Bob.takeDamage(Lucy.getAtk());
+	std::cout << std::endl;
+
+	Lucy.getInfos();
+	Bob.getInfos();
+	std::cout << std::endl;
+
+	Lucy.beRepaired(2000);
+	Bob.beRepaired(10);
+	std::cout << std::endl;
+
+	Lucy.getInfos();
+	Bob.getInfos();
 	std::cout << std::endl;
 }
