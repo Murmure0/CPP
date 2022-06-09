@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 11:24:54 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/07 15:52:09 by maelle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap ( std::string name ) : ClapTrap(name)
+{
+	std::cout << "Default ScavTrap constructor." << std::endl;
+	this->_HitPts = 100;
+	this->_EnergyPts = 50;
+	this->_AttackDmg = 20;
+	this->getInfos();
+}
+
+ScavTrap::~ScavTrap( void )
+{
+	std::cout << "Default ScavTrap destructor." << std::endl;
+}
+
+ScavTrap::ScavTrap( ScavTrap const& src ) : ClapTrap(src)
+{
+	std::cout << "ScavTrap Copy constructor." << std::endl;
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	if (this->_HitPts == 0 || this->_EnergyPts == 0)
+		std::cout << "ScavTrap " << this->_name << " can't do anything, boo." << std::endl;
+	else
+	{
+		std::cout << "ScavTrap " << this->_name << " brutally attacks " << target << ", causing " << this->_AttackDmg << " dmg!" << std::endl;
+		this->_EnergyPts--;
+	}
+}
+
+void ScavTrap::guardGate( void )
+{
+	std::cout << this->_name << " : Gate Keeper mode activated." << std::endl;
+}
