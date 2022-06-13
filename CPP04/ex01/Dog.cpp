@@ -15,11 +15,13 @@
 Dog::Dog() : Animal("Dog")
 {
 	std::cout << "Dog(void) Default constructor called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::Dog( std::string type ) : Animal(type)
 {
 	std::cout << "Dog " << getType() << " Default constructor called" << std::endl;
+	delete [] this->_brain;
 }
 
 Dog::Dog( Dog const & src ) : Animal()

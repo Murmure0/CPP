@@ -20,14 +20,11 @@ public :
 
 	Dog();
 	Dog( std::string type );
-	Dog( Dog const & );
+	Dog( Dog const & src );
 	~Dog();
 
-	Dog& operator=( Dog const & );
+	Dog& operator=( Dog const & rhs);
 
 	std::string		getType( void ) const;
 	virtual void	makeSound( void ) const;
-
-protected :
-	std::string		_type;
 };

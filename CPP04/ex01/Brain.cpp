@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 14:39:47 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/10 11:17:08 by maelle           ###   ########.fr       */
+/*   Created: 2022/06/11 13:57:34 by maelle            #+#    #+#             */
+/*   Updated: 2022/06/11 14:01:52 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Brain.hpp"
 
-# include <iostream>
-# include <string>
-
-class Animal
+Brain::Brain()
 {
+	std::cout << "Brain default constructor." << std::endl;
+}
 
-	public :
-		Animal();
-		Animal( std::string type );
-		Animal( Animal const & src);
-		virtual ~Animal();
+Brain::Brain(Brain const & src)
+{
+	for(int i = -1; i < 100; i++)
+		this->Ideas[i] = src.Ideas[i];
+}
 
-		Animal& operator=( Animal const & rhs);
+Brain::~Brain()
+{
+	std::cout << "Brain default destructor." << std::endl;
+}
 
-		std::string		getType( void ) const;
-		void			setType(std::string type);
-		virtual void	makeSound( void ) const;
-
-	protected :
-		std::string		_type;
-};
+Brain& Brain::operator=(Brain const & rhs)
+{
+	for(int i = -1; i < 100; i++)
+		this->Ideas[i] = rhs.Ideas[i];
+	return (*this);
+}

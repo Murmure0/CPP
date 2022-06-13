@@ -6,7 +6,7 @@
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/10 15:25:49 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/11 14:09:30 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat(void) Default constructor called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Cat::Cat( std::string type ) : Animal(type)
 {
 	std::cout << "Cat " << getType() << " Default constructor called" << std::endl;
+	delete [] this->_brain;
 }
 
 Cat::Cat( Cat const & src ) : Animal(src)

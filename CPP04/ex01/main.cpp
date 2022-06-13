@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 14:39:47 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/10 11:17:08 by maelle           ###   ########.fr       */
+/*   Created: 2022/06/09 14:39:31 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/11 14:34:12 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+# include "Dog.hpp"
+# include "Cat.hpp"
+# include "WrongCat.hpp"
 
-# include <iostream>
-# include <string>
-
-class Animal
+int main()
 {
+	Animal zoo[4];
+	const Animal *Dog1 = new Dog();
+	const Animal *Dog2 = new Dog();
+	const Animal *Cat1 = new Cat();
+	const Animal *Cat2 = new Cat();
 
-	public :
-		Animal();
-		Animal( std::string type );
-		Animal( Animal const & src);
-		virtual ~Animal();
+	zoo[0].setType(Dog1->getType());
+	zoo[1].setType(Dog2->getType());
+	zoo[2].setType(Cat1->getType());
+	zoo[3].setType(Cat2->getType());
 
-		Animal& operator=( Animal const & rhs);
+	zoo[0].
+//	delete [] zoo;
 
-		std::string		getType( void ) const;
-		void			setType(std::string type);
-		virtual void	makeSound( void ) const;
-
-	protected :
-		std::string		_type;
-};
+	return 0;
+}
