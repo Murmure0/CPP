@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,23 +12,23 @@
 
 #pragma once
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Dog : public Animal {
+class Cat : public AAnimal {
 
 	public :
 
-		Dog();
-		Dog( std::string type );
-		Dog( Dog const & src );
-		virtual ~Dog();
+		Cat();
+		Cat( std::string type );
+		Cat( Cat const & src);
+		virtual ~Cat();
 
-		Dog& operator=( Dog const & rhs);
+		Cat& operator=( Cat const & rhs);
 
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
 
 	private :
-
+	
 	Brain* _brain;
 };

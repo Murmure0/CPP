@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:39:31 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/13 17:28:51 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:16:22 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int main()
 	}
 	std::cout << std::endl;
 
-
 	std::cout << "-----------------------------" << std::endl;
 	std::cout << "VERIF DEEP COPY" << std::endl;
 	std::cout << std::endl;
@@ -51,8 +50,6 @@ int main()
 	std::cout << "Cat constructors : " << std::endl;
 	Cat* cat = new Cat();
 	Cat cat2;
-	std::cout << std::endl;
-	Animal random;
 	std::cout << std::endl;
 
 	{
@@ -62,22 +59,16 @@ int main()
 		tmp = *cat;
 		std::cout << std::endl;
 
-		std::cout << "TMP2 : " << std::endl;
+		std::cout << "TMP3 : " << std::endl;
 		Cat tmp2(cat2);
 		tmp2 = cat2;
-		std::cout << std::endl;
-		
-		std::cout << "TMP3 : " << std::endl;
-		Animal tmp3(random);
-		tmp3 = random;
-		tmp3.makeSound();
 		std::cout << std::endl;
 	}
 		std::cout << std::endl;
 	std::cout << "Deleting cat, if the deep copy went wrong => double free" << std::endl;
 	delete cat;
 		std::cout << std::endl;
+	
 	std::cout << "Deleting cat2(on the stack)" << std::endl;
-
 	return 0;
 }

@@ -14,14 +14,14 @@
 
 # include "Animal.hpp"
 
-class Cat : public Animal, Brain {
+class Cat : public Animal {
 
 	public :
 
 		Cat();
 		Cat( std::string type );
 		Cat( Cat const & src);
-		~Cat();
+		virtual ~Cat();
 
 		Cat& operator=( Cat const & rhs);
 

@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:22:23 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/09 11:11:25 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/13 09:36:44 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ FragTrap::~FragTrap()
 
 void	FragTrap::highFivesGuys( void )
 {
-	std::cout << "Guys, you're so cool ! High five ?" << std::endl;
+	std::cout << "Guy, you're so cool ! High five ?" << std::endl;
 }
