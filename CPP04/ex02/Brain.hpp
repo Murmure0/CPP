@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include <string>
-#include <iostream>
+# include <string>
+# include <iostream>
 
 class Brain{
 

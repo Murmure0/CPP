@@ -6,11 +6,11 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/13 10:15:36 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/14 11:34:54 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 
 CC = c++
 
@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		WrongAnimal.cpp \

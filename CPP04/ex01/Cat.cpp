@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/13 16:41:19 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:09:57 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ Cat& Cat::operator=( Cat const & rhs )
 	{
 		this->_type = rhs._type;
 	}
+	delete this->_brain;
+	this->_brain = new Brain(*(rhs._brain));
 	return *this;
 }
 

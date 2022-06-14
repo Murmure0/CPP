@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:39:31 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/13 17:28:51 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:44:08 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main()
 
 	std::cout << "Cat constructors : " << std::endl;
 	Cat* cat = new Cat();
+	std::cout << std::endl;
 	Cat cat2;
 	std::cout << std::endl;
 	Animal random;
@@ -58,19 +59,21 @@ int main()
 	{
 		std::cout << "COPY TIME " << std::endl;
 		std::cout << "TMP : " << std::endl;
-		Cat	tmp(*cat);
-		tmp = *cat;
+		Cat	*tmp = new Cat(*cat);
+		tmp->makeSound();
+		delete tmp;
+		std::cout << std::endl;
+
+		Cat	*tmp3 = new Cat;
+		*tmp3 = cat2;
+		tmp->makeSound();
+		delete tmp3;
 		std::cout << std::endl;
 
 		std::cout << "TMP2 : " << std::endl;
 		Cat tmp2(cat2);
 		tmp2 = cat2;
-		std::cout << std::endl;
-		
-		std::cout << "TMP3 : " << std::endl;
-		Animal tmp3(random);
-		tmp3 = random;
-		tmp3.makeSound();
+		tmp2.makeSound();
 		std::cout << std::endl;
 	}
 		std::cout << std::endl;
