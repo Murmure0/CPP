@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:15:25 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/14 18:25:21 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/15 10:34:31 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cure& Cure::operator=(Cure const & rhs)
 Cure* Cure::clone() const
 {
 	Cure* newCure = new Cure;
+	std::cout << "New Cure created !" << std::endl;
 	return newCure;
 }
 

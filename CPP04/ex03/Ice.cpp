@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:13:16 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/14 18:25:25 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/15 10:34:43 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Ice& Ice::operator=(Ice const &  rhs)
 Ice* Ice::clone() const
 {
 	Ice* newIce = new Ice;
+	std::cout << "New Ice created !" << std::endl;
 	return newIce;
 }
 
