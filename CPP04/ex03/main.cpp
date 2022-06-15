@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:45:09 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 14:10:00 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/15 21:24:52 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,65 +19,72 @@
 #include "ICharacter.hpp"
 
 int main()
-{
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	std::cout << "1" << std::endl;
-//	IMateriaSource* src2 = new MateriaSource(*(MateriaSource*(src)));
-//	*src2 = *src;
-	std::cout << "2" << std::endl;
+{ //main 1 :
+// 	AMateria* cureA = new Cure();
 	
-	ICharacter* me = new Character("me");
+// 	IMateriaSource* src = new MateriaSource();
+// 	src->learnMateria(cureA);
+// 	src->learnMateria(new Ice());
+// 	// src->learnMateria(new Cure());
+// 	// src->learnMateria(new Cure());
+// 	// src->learnMateria(new Cure());
+// 	// src->learnMateria(new Cure());
+// 	// src->learnMateria(new Ice());
+// 	std::cout << "1" << std::endl;
+// 	//nope :
+// //	IMateriaSource* src2 = new MateriaSource(*(MateriaSource*(src)));
+// //	*src2 = *src;
+// 	std::cout << "2" << std::endl;
+	
+// 	ICharacter* me = new Character("me");
+// 	//delete cureA;
+// 	AMateria* tmp;
+// 	tmp = src->createMateria("ice");
+// 	std::cout << "3" << std::endl;
+// 	me->equip(tmp);
+// 	std::cout << "4" << std::endl;
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	ICharacter* bob = new Character("bob");
+// 	std::cout << "5" << std::endl;
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
+// 	std::cout << "6" << std::endl;
+// //nope :
+// //*me = *bob;
+
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+// 	//system("leaks ex03");
+
+// 	return 0;
+
+
+//main 2:
+	MateriaSource src1, src2;
+	src1.learnMateria(new Ice());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Ice());
+	src2 = src1;
+	Character bob("Bob"), frank("Frank");
 
 	AMateria* tmp;
-	tmp = src->createMateria("ice");
+	tmp = src2.createMateria("ice");
 	std::cout << "3" << std::endl;
-	me->equip(tmp);
+	bob.equip(tmp);
 	std::cout << "4" << std::endl;
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
+	tmp = src2.createMateria("cure");
+	bob.equip(tmp);
+
 	std::cout << "5" << std::endl;
-	me->use(0, *bob);
-	me->use(1, *bob);
+	frank = bob;
+	frank.use(0, bob);
+	frank.use(1, bob);
 	std::cout << "6" << std::endl;
-
-	*me = *bob;
-	delete bob;
-	delete me;
-	delete src;
-	system("leaks ex03");
-
-	return 0;
-
-	// MateriaSource src1, src2;
-	// src1.learnMateria(new Ice());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Ice());
-	// src2 = src1;
-	// Character bob("Bob"), frank("Frank");
-
-	// AMateria* tmp;
-	// tmp = src2.createMateria("ice");
-	// std::cout << "3" << std::endl;
-	// bob.equip(tmp);
-	// std::cout << "4" << std::endl;
-	// tmp = src2.createMateria("cure");
-	// bob.equip(tmp);
-
-	// std::cout << "5" << std::endl;
-	// frank = bob;
-	// frank.use(0, bob);
-	// frank.use(1, bob);
-	// std::cout << "6" << std::endl;
 	
 
 }

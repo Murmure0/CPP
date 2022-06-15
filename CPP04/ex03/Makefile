@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
+#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/14 13:59:28 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/15 21:12:40 by maelle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = ex03
 
 CC = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+#valgrind --tool=memcheck --leak-check=yes --leak-resolution=high --show-reachable=yes ./test
 RM = rm -rf
 
 SOURCES = main.cpp \

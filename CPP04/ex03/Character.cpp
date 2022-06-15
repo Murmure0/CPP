@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:31:42 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 13:15:37 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/15 21:10:25 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ Character::Character()
 	std::cout << "coucou created" << std::endl;
 	this->_name = "No name";
 	for (int i = 0; i < 4; i++)
-		this->_materia[i] = nullptr;
+		this->_materia[i] = NULL;
 }
 
 Character::Character(std::string name) : _name(name)
 {
 	std::cout << name <<" created" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_materia[i] = nullptr;
+		this->_materia[i] = NULL;
 }
 
 Character::Character(Character const & src)
@@ -33,10 +33,10 @@ Character::Character(Character const & src)
 
 	this->_name = src._name;
 	for (int i = 0; i < 4; i++)
-		if (src._materia[i] != nullptr)
+		if (src._materia[i] != NULL)
 			this->_materia[i] = src._materia[i]->clone();
 		else
-			this->_materia[i] = nullptr;
+			this->_materia[i] = NULL;
 }
 
 Character::~Character()
@@ -56,7 +56,7 @@ Character& Character::operator=(Character const & rhs)
 		if (rhs._materia[i])
 			this->_materia[i] = rhs._materia[i]->clone();
 		else
-			this->_materia[i] = nullptr;
+			this->_materia[i] = NULL;
 	}
 	return *this;
 }
@@ -70,7 +70,7 @@ void Character::equip(AMateria* m)
 {
 	int i = 0;
 
-	while (this->_materia[i] != nullptr)
+	while (this->_materia[i] != NULL)
 		i++;
 	if (i > 3)
 		return ;
@@ -80,7 +80,7 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	this->_materia[idx] = nullptr;
+	this->_materia[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
