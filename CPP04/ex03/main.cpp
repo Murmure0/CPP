@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:45:09 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 14:10:00 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/16 13:00:29 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,66 +20,113 @@
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	std::cout << "1" << std::endl;
-//	IMateriaSource* src2 = new MateriaSource(*(MateriaSource*(src)));
-//	*src2 = *src;
-	std::cout << "2" << std::endl;
+	// IMateriaSource* src = new MateriaSource();
+	// std::cout << std::endl;
+
+	// src->learnMateria(new Ice());
+	// std::cout << std::endl;
+	// src->learnMateria(new Cure());
+	// std::cout << std::endl;
+	// src->learnMateria(new Cure());
+	// std::cout << std::endl;
+	// src->learnMateria(new Cure());
+	// std::cout << std::endl;
 	
-	ICharacter* me = new Character("me");
+	// src->learnMateria(new Cure());
+	// src->learnMateria(new Ice());
+	// std::cout << std::endl;
 
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	std::cout << "3" << std::endl;
-	me->equip(tmp);
-	std::cout << "4" << std::endl;
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	std::cout << "5" << std::endl;
-	me->use(0, *bob);
-	me->use(1, *bob);
-	std::cout << "6" << std::endl;
-
-	*me = *bob;
-	delete bob;
-	delete me;
-	delete src;
-	system("leaks ex03");
-
-	return 0;
-
-	// MateriaSource src1, src2;
-	// src1.learnMateria(new Ice());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Cure());
-	// src1.learnMateria(new Ice());
-	// src2 = src1;
-	// Character bob("Bob"), frank("Frank");
+	// ICharacter* me = new Character("me");
+	// ICharacter* bob = new Character("bob");
+	// std::cout << std::endl;
 
 	// AMateria* tmp;
-	// tmp = src2.createMateria("ice");
-	// std::cout << "3" << std::endl;
-	// bob.equip(tmp);
-	// std::cout << "4" << std::endl;
-	// tmp = src2.createMateria("cure");
-	// bob.equip(tmp);
+	// tmp = src->createMateria("ice");
+	// me->equip(tmp);
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
+	// std::cout << std::endl;
 
-	// std::cout << "5" << std::endl;
-	// frank = bob;
-	// frank.use(0, bob);
-	// frank.use(1, bob);
-	// std::cout << "6" << std::endl;
+	// me->use(0, *bob);
+	// me->use(1, *bob);
+	// std::cout << std::endl;
+	// std::cout << std::endl;
+
+	// std::cout << "Everything-went-wrong tests : " << std::endl;
+	// std::cout << std::endl;
+
+	// std::cout << "Creating empty materia : " << std::endl;
+	// tmp = src->createMateria("");
+	// me->equip(tmp);
+
+	// std::cout << "Using wrong index " << std::endl;	
+	// std::cout << "- to use : " << std::endl;
+	// me->use(-1, *bob);
+	// me->use(2, *bob);
+	// me->use(5, *bob);
+	// std::cout << std::endl;
+
+	// me->unequip(0);
+	// me->unequip(1);
+	// std::cout << std::endl;
+
+
+	// std::cout << "- using after unequip : " << std::endl;
+	// me->use(0, *bob);
+	// me->use(1, *bob);
+	// std::cout << std::endl;
+
+	// std::cout << "- to unequip : " << std::endl;
+	// me->unequip(-1);
+	// me->unequip(0);
+	// std::cout << std::endl;
+
+
+	// std::cout << "- to use a materia without ever learning one : " << std::endl;
+	// bob->use(0, *me);
+
+	// delete bob;
+	// delete me;
+	// delete src;
+
+	// Main to verify deep copy :
+
+	MateriaSource src1, src2;
+	std::cout << std::endl;
 	
+	src1.learnMateria(new Ice());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Cure());
+	std::cout << std::endl;
+	
+	src1.learnMateria(new Cure());
+	src1.learnMateria(new Ice());
+	std::cout << std::endl;
+	
+	src2 = src1;
+	std::cout << std::endl;
 
+	Character bob("Bob");
+	Character frank("Frank");
+	std::cout << std::endl;
+
+	AMateria* tmp;
+	tmp = src2.createMateria("ice");
+	bob.equip(tmp);
+	std::cout << std::endl;
+	
+	tmp = src2.createMateria("cure");
+	bob.equip(tmp);
+	std::cout << std::endl;
+
+	frank = bob;
+	std::cout << std::endl;
+	
+	frank.use(0, bob);
+	frank.use(1, bob);
+	
+	return 0;
 }
 
 //cas ou learn materia utilise clone()

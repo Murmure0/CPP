@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:46:46 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/14 17:08:41 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:57:47 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 AMateria::AMateria()
 {
+	std::cout << "AMateria created." << std::endl;
 }
 
 AMateria::AMateria(AMateria const & src)
 {
+	std::cout << "AMateria by copy created." << std::endl;
 	this->_type = src._type;
 }
 
@@ -43,5 +45,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "Shpouick on " << target.getName() << std::endl;
+	std::cout << " * Shpouick on " << target.getName() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:31:59 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/14 17:50:47 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:28:26 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ class Character : public ICharacter {
 
 		std::string _name;
 		AMateria* _materia[4];
+		AMateria* _rejectedMateria[100];
 };

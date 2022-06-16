@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:15:25 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 10:34:31 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:31:39 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ Cure& Cure::operator=(Cure const & rhs)
 Cure* Cure::clone() const
 {
 	Cure* newCure = new Cure;
-	std::cout << "New Cure created !" << std::endl;
+	std::cout << "New Cure clone created." << std::endl;
 	return newCure;
 }
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* shoot a cure bolt at " << target.getName() << std::endl;
+	std::cout << "* heals "<< target.getName() << "’s wounds *"  << std::endl;
 }

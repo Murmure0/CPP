@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:13:16 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 10:34:43 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:32:20 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ Ice& Ice::operator=(Ice const &  rhs)
 Ice* Ice::clone() const
 {
 	Ice* newIce = new Ice;
-	std::cout << "New Ice created !" << std::endl;
+	std::cout << "New Ice clone created." << std::endl;
 	return newIce;
 }
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoot an ice bolt at " << target.getName() << std::endl;
+	std::cout << "* shoot an ice bolt at " << target.getName() << " *" << std::endl;
 }
