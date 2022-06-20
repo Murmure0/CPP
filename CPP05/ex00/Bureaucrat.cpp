@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:05 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 09:53:06 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/20 12:54:30 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,19 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name), _grade(src._grade)
+{
+	std::cout << "Welcome bureaucrat " << this->_name << " by copy, you're at grade " << this->_grade << std::endl; 
+}
+
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Byebye Bureaucrat " << this->_name << std::endl;
 }
 
-Bureaucrat& Bureaucrat::operator=(Bureaucrat const & src)
+Bureaucrat& Bureaucrat::operator=(Bureaucrat const & rhs)
 {
-	this->_grade = src._grade;
+	this->_grade = rhs._grade;
 	return *this;
 }
 
@@ -73,7 +78,6 @@ void	Bureaucrat::incrementGrade( void )
 			throw Bureaucrat::GradeTooHighException();
 		else
 		{
-
 			this->_grade--;
 			std::cout << *this << std::endl; 
 		}
