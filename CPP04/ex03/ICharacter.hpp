@@ -6,13 +6,14 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:11:05 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/15 12:54:48 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:11:02 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <iostream>
 
 class AMateria;
 class ICharacter

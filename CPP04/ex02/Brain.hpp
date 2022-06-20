@@ -25,6 +25,8 @@ class Brain{
 
 		Brain& operator=(Brain const & rhs);
 
+		std::string	getIdeas( void );
+		
 	protected :
 
 		std::string Ideas[100];

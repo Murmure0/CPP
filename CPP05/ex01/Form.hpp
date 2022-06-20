@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 10:35:21 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 09:52:27 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/17 10:35:35 by maelle            #+#    #+#             */
+/*   Updated: 2022/06/17 23:25:33 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Bureaucrat.hpp"
 
-#include <string>
-#include <iostream>
-
-class Bureaucrat{
+class Form{
 
 	public :
-
-	Bureaucrat();
-	Bureaucrat(const std::string name, int grade);
-	~Bureaucrat();
-
-	Bureaucrat& operator=(Bureaucrat const & src);
-
-	std::string getName( void );
-	int getGrade( void );
-
-	void incrementGrade( void );
-	void decrementGrade( void );
 
 	class GradeTooHighException : public std::exception
 	{
@@ -49,10 +34,11 @@ class Bureaucrat{
 		}
 	};
 
+	
 	private :
 
-	const std::string	_name;
-	int					_grade;
+		std::string _name;
+		bool isSigned = false;
+		const int gradeToSign;
+		const int gradeToExecute;
 };
-
-std::ostream&	operator<<( std::ostream & o, Bureaucrat & i );

@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:56:49 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/16 13:54:58 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:16:42 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 		i++;
 		if (i > 3)
 		{
-			std::cout << "No materia known as " << type << std::endl;
+			if (type == "")
+				std::cout << "No materia type given." << type << std::endl;
+			else
+				std::cout << "No materia known as " << type << std::endl;
 			return NULL;
 		}
 	}

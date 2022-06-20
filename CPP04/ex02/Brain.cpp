@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 13:57:34 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/13 14:06:43 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:55:26 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ Brain& Brain::operator=(Brain const & rhs)
 	for(int i = -1; i < 100; i++)
 		this->Ideas[i] = rhs.Ideas[i];
 	return (*this);
+}
+
+std::string Brain::getIdeas( void )
+{
+	return this->Ideas[0];
 }

@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:21 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 09:52:27 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:07:53 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #include <string>
 #include <iostream>

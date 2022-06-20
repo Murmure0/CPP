@@ -27,6 +27,7 @@ class Cat : public Animal {
 
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
+		void			think( void );
 
 	private :
 	

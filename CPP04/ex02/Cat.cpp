@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:10 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/14 10:14:41 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:55:28 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,9 @@ std::string Cat::getType( void ) const
 void	Cat::makeSound( void ) const
 {
 	std::cout << "The " << getType() << " is meowing." << std::endl;
+}
+
+void	Cat::think( void )
+{
+	std::cout << "The " << getType() << " is thinking : " << this->_brain->getIdeas() << std::endl;
 }

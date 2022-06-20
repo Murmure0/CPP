@@ -27,7 +27,7 @@ class Cat : public AAnimal {
 
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
-
+		void			think( void );
 	private :
 	
 	Brain* _brain;

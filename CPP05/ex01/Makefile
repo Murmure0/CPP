@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
+#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/20 09:52:38 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/17 10:30:23 by maelle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 
 CC = c++
 
@@ -20,6 +20,7 @@ RM = rm -rf
 
 SOURCES = 	main.cpp \
 			Bureaucrat.cpp \
+			Form.cpp \
 
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
