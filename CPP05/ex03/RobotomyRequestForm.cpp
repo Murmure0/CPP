@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:44 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 13:51:53 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:50:36 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,13 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : Form
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << "destructor." << std::endl;
+	std::cout << "RobotomyRequestForm " << this->getName() << " destructor." << std::endl;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)
+{
+	(void)rhs;
+	return (*this);
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
@@ -44,7 +50,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 			throw Form::ExecuteGradeTooLowException();
 		else
 		{
-			//std::cout << executor.getName() << " can execute the form " << this->getName() << "." << std::endl;
 			std::cout << "*Bruits de perceuse*" << std::endl;
 			srand((unsigned int)time(0));
 

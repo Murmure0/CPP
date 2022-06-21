@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:05 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 13:51:30 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:45:21 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	Bureaucrat::signForm( Form & f )
 void	Bureaucrat::executeForm(Form const & form)
 {
 	if ((this->getGrade() > form.getGradeToExecute()) || form.getStatus() == false)
-		std::cout << this->getName() << " can't execute the form " << form.getName() << std::endl;
+		std::cout << this->getName() << " can't execute the form " << form.getName() << " because his grade is : " << this->getGrade() << " and the grade to execute the form is " << form.getGradeToExecute() << "." << std::endl;
 	else
 		std::cout << this->getName() << " executed the form " << form.getName() << std::endl;
 }

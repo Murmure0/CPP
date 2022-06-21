@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:32:57 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 13:51:59 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:50:10 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm " << this->getName() << "destructor." << std::endl;
+	std::cout << "PresidentialPardonForm " << this->getName() << " destructor." << std::endl;
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs)
+{
+	(void)rhs;
+	return (*this);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const

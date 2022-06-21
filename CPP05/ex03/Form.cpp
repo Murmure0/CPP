@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:42 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 13:42:16 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:51:48 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ Form::~Form()
 	std::cout << "Destruction of Form : " << this->getName() << "." << std::endl;
 }
 
+Form& Form::operator=(Form const & rhs)
+{
+	this->_isSigned = rhs._isSigned;
+	return (*this);
+}
 
 std::string Form::getName( void ) const
 {
