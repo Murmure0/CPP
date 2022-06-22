@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:05 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 12:54:30 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:55:14 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,14 @@ Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(150)
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-		else
-		{
-			this->_grade = grade;
-			std::cout << "Welcome bureaucrat " << this->_name << ", you're at grade " << this->_grade << std::endl; 
-		}
 
-	}
-	catch(Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << this->_name << " : " << e.what() << '\n';
-	}
-	catch(Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << this->_name << " : " << e.what() << '\n';
-	}
-	
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+
+	this->_grade = grade;
+	std::cout << "Welcome bureaucrat " << this->_name << ", you're at grade " << this->_grade << std::endl; 
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name), _grade(src._grade)
@@ -70,42 +56,27 @@ int Bureaucrat::getGrade( void )
 
 void	Bureaucrat::incrementGrade( void )
 {
-	try
+	std::cout << "Incrementing " << this->getName() << " : " << std::endl;
+	int i = this->_grade - 1;
+	if (i < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
 	{
-		std::cout << "Incrementing " << this->getName() << " : " << std::endl;
-		int i = this->_grade - 1;
-		if (i < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else
-		{
-			this->_grade--;
-			std::cout << *this << std::endl; 
-		}
-	}
-	catch(Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << this->getName() << " " << e.what() << '\n';
+		this->_grade--;
+		std::cout << *this << std::endl; 
 	}
 }
 
 void Bureaucrat::decrementGrade( void )
 {
-	try
+	std::cout << "Decrementing " << this->getName() << " : " << std::endl; 
+	int i = this->_grade + 1;
+	if (i > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
 	{
-		std::cout << "Decrementing " << this->getName() << " : " << std::endl; 
-		int i = this->_grade + 1;
-		if (i > 150)
-			throw Bureaucrat::GradeTooLowException();
-		else
-		{
-			this->_grade++;
-			std::cout << *this << std::endl; 
-		}
-		
-	}
-	catch(Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << this->getName() << " " << e.what() << '\n';
+		this->_grade++;
+		std::cout << *this << std::endl; 
 	}
 }
 

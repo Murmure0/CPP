@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:02 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:51:44 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:31:08 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,47 +31,38 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) 
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberyCreationForm " << this->getName() << " destructor." << std::endl;
-}
-
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs)
-{
-	(void)rhs;
-	return (*this);
+	std::cout << "ShrubberyCreationForm " << this->getName() << "destructor." << std::endl;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	try
+
+	if (this->getStatus() == 0)
 	{
-		if (this->getStatus() == 0)
-			throw Form::NotSignedException();
-		else if (executor.getGrade() > this->getGradeToExecute())
-			throw Form::ExecuteGradeTooLowException();
-		else
-		{
-			//std::cout << executor.getName() << " can execute the form " << this->getName() << "." << std::endl;
-			std::ofstream outfile(this->getTarget().append(".shrubbery"), std::ios::out);
-			if (!outfile.good())
-				std::cout << "Creation of the newfile compromised." << std::endl;
-			outfile << "							,AAAAAAA," << std::endl;
-			outfile << "					,,,.   ,AAAAAAA/AA,  .oo8888o." << std::endl;
-			outfile << "				,&\%%&%&&\%,AAAAA/AAAAAA,888888/8o" << std::endl;
-			outfile << "				,%&\%&&%&&\%,AAAAAA/AAAAA888888/88'" << std::endl;
-			outfile << "				%&&%&%&/%&&\%AAAAAA/ /AAA8888888888'" << std::endl;
-			outfile << "				%&&%/ %&\%%&&AAA V /AA' `88888 `/88'" << std::endl;
-			outfile << "				`&%  ` /%&'    |.|         |'|8''" << std::endl;
-			outfile << "					|o|        | |         | |" << std::endl;
-			outfile << "					|.|        | |         | |" << std::endl;
-			outfile.close();
-			std::cout << "Creation of the file " << this->getTarget().append(".shrubbery") << std::endl;
-		}
-		
+		executor.executeForm(*this);
+		throw Form::NotSignedException();
 	}
-	catch(const std::exception& e)
+	else if (executor.getGrade() > this->getGradeToExecute())
 	{
-		std::cerr << "The bureaucrate " << executor.getName() << " can't execute the form " << this->getName() << "." << std::endl;
-		std::cerr << e.what() << '\n';
+		executor.executeForm(*this);
+		throw Form::ExecuteGradeTooLowException();
 	}
-	
+	else
+	{
+		executor.executeForm(*this);
+		std::ofstream outfile(this->getTarget().append(".shrubbery").c_str(), std::ios::out);
+		if (!outfile.good())
+			std::cout << "Creation of the newfile compromised." << std::endl;
+		outfile << "							,AAAAAAA," << std::endl;
+		outfile << "					,,,.   ,AAAAAAA/AA,  .oo8888o." << std::endl;
+		outfile << "				,&\%%&%&&\%,AAAAA/AAAAAA,888888/8o" << std::endl;
+		outfile << "				,%&\%&&%&&\%,AAAAAA/AAAAA888888/88'" << std::endl;
+		outfile << "				%&&%&%&/%&&\%AAAAAA/ /AAA8888888888'" << std::endl;
+		outfile << "				%&&%/ %&\%%&&AAA V /AA' `88888 `/88'" << std::endl;
+		outfile << "				`&%  ` /%&'    |.|         |'|8''" << std::endl;
+		outfile << "					|o|        | |         | |" << std::endl;
+		outfile << "					|.|        | |         | |" << std::endl;
+		outfile.close();
+		std::cout << "Creation of the file " << this->getTarget().append(".shrubbery") << std::endl;
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:34:16 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:49:10 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 10:38:37 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ Form* Intern::makeForm(const std::string requestName, const std::string target)
 								"presidential pardon request",
 								"shrubbery request"};
 	
-	int x = 3;
-	for(int i = 0; i < 3; i++)
+	int x = 0;
+	for(x = 0; x < 3; x++)
 	{
-		if (requestName == reqName[i])
-			x = i;
+		if (requestName == reqName[x])
+			break;
 	}
 	switch (x)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:32:57 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:50:10 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:21:23 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,34 +29,21 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm " << this->getName() << " destructor." << std::endl;
-}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs)
-{
-	(void)rhs;
-	return (*this);
+	std::cout << "PresidentialPardonForm " << this->getName() << "destructor." << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	try
+	if (this->getStatus() == 0)
 	{
-		if (this->getStatus() == 0)
-			throw Form::NotSignedException();
-		else if (executor.getGrade() > this->getGradeToExecute())
-			throw Form::ExecuteGradeTooLowException();
-		else
-		{
-			//std::cout << executor.getName() << " can execute the form " << this->getName() << std::endl;
-			std::cout << "Big news : " << this->getTarget() << " has been forgiven by Zaphod Beeblebrox." << std::endl;
-		}
-		
+		executor.executeForm(*this);
+		throw Form::NotSignedException();
 	}
-	catch(const std::exception& e)
+	else if (executor.getGrade() > this->getGradeToExecute())
 	{
-		std::cerr << "The bureaucrate " << executor.getName() << " can't execute the form " << this->getName() << std::endl;
-		std::cerr << e.what() << '\n';
+		executor.executeForm(*this);
+		throw Form::ExecuteGradeTooLowException();
 	}
-	
+	else
+		std::cout << "Big news : " << this->getTarget() << " has been forgiven by Zaphod Beeblebrox." << std::endl;
 }

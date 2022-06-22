@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:42 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 16:01:08 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:32:24 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Form::Form() : _name("Basic"),_isSigned(false), _gradeToSign(100),_gradeToExecut
 
 Form::Form(const std::string name, int gSign, int gExec) : _name(name), _isSigned(false), _gradeToSign(gSign), _gradeToExecute(gExec)
 {
-	std::cout << "Construct Form : " << _name << std::endl; //a retravailler 
+	std::cout << "Construct Form : " << _name << std::endl;
 }
 
 Form::Form(Form const & src) : _name(src._name), _isSigned(src._isSigned) ,_gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
 {
-	std::cout << "Construt by copy Form : " << _name << std::endl; //a retravailler 
+	std::cout << "Construt by copy Form : " << _name << std::endl;
 }
 
 Form::~Form()
@@ -59,20 +59,15 @@ int Form::getGradeToExecute( void ) const
 
 void Form::beSigned(Bureaucrat & b)
 {
-	try
+	if (b.getGrade() > this->getGradeToSign())
 	{
-		if (b.getGrade() > this->getGradeToSign())
-			throw Form::GradeTooLowException();
-		else
-			{
-				this->_isSigned = true;
-				std::cout << b.getName() << " tries to sign " << this->getName() << " : OK." << std::endl;
-			}
+		b.signForm(*this);
+		throw Form::GradeTooLowException();
 	}
-	catch(Form::GradeTooLowException& e)
+	else
 	{
-		std::cerr << b.getName() << " tries to sign " << this->getName() << " : ";
-		std::cerr << e.what() << '\n';
+		this->_isSigned = true;
+		b.signForm(*this);
 	}
 }
 

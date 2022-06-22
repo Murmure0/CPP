@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:42 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:51:48 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:47:31 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ Form::~Form()
 Form& Form::operator=(Form const & rhs)
 {
 	this->_isSigned = rhs._isSigned;
-	return (*this);
+	std::cout << "Warning: can't modify name and grades (const variable)." << std::endl;
+	return *this;
 }
 
 std::string Form::getName( void ) const
@@ -62,20 +63,15 @@ std::string Form::getTarget( void ) const
 
 void Form::beSigned(Bureaucrat & b)
 {
-	try
+	if (b.getGrade() > this->getGradeToSign())
 	{
-		if (b.getGrade() > this->getGradeToSign())
-			throw Form::GradeTooLowException();
-		else
-			{
-				this->_isSigned = true;
-				std::cout << b.getName() << " tries to sign " << this->getName() << " : OK." << std::endl;
-			}
+		b.signForm(*this);
+		throw Form::GradeTooLowException();
 	}
-	catch(Form::GradeTooLowException& e)
+	else
 	{
-		std::cerr << b.getName() << " tries to sign " << this->getName() << " : ";
-		std::cerr << e.what() << '\n';
+		this->_isSigned = true;
+		b.signForm(*this);
 	}
 }
 

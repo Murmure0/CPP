@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:35 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:51:44 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:15:07 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ class Form{
 	bool		getStatus ( void ) const;
 	int			getGradeToSign( void ) const;
 	int			getGradeToExecute( void ) const;
+	
 	void		beSigned( Bureaucrat & b );
-
+	virtual void execute(Bureaucrat const & executor) const = 0;
+	
 	class GradeTooHighException : public std::exception
 	{
 		public :
@@ -73,7 +75,6 @@ class Form{
 	};
 
 
-	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	private :
 

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:21 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 15:15:32 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:37:09 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <string>
 #include <iostream>
 #include "Form.hpp"
@@ -26,16 +27,15 @@ class Bureaucrat{
 	Bureaucrat(Bureaucrat const & src);
 	~Bureaucrat();
 
-	Bureaucrat& operator=(Bureaucrat const & src);
+	Bureaucrat& operator=(Bureaucrat const & rhs);
 
-
-	std::string	getName( void );
-	int			getGrade( void );
+	std::string	getName( void ) const;
+	int			getGrade( void ) const;
 
 	void		incrementGrade( void );
 	void		decrementGrade( void );
-	void		signForm(Form &f);
 
+	void		signForm(Form &f) const;
 
 	class GradeTooHighException : public std::exception
 	{

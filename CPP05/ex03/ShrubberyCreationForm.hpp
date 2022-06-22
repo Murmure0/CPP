@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:30 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 14:23:11 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:17:13 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ class ShrubberyCreationForm : public Form{
 	ShrubberyCreationForm& operator=(ShrubberyCreationForm const & rhs);
 
 	virtual void execute(Bureaucrat const & executor) const;
+
 };

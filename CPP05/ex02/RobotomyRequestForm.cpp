@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:44 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 13:51:53 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:21:47 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,26 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	try
+if (this->getStatus() == 0)
 	{
-		if (this->getStatus() == 0)
-			throw Form::NotSignedException();
-		else if (executor.getGrade() > this->getGradeToExecute())
-			throw Form::ExecuteGradeTooLowException();
-		else
-		{
-			//std::cout << executor.getName() << " can execute the form " << this->getName() << "." << std::endl;
-			std::cout << "*Bruits de perceuse*" << std::endl;
-			srand((unsigned int)time(0));
+		executor.executeForm(*this);
+		throw Form::NotSignedException();
+	}
+	else if (executor.getGrade() > this->getGradeToExecute())
+	{
+		executor.executeForm(*this);
+		throw Form::ExecuteGradeTooLowException();
+	}
+	else
+	{
+		executor.executeForm(*this);
+		std::cout << "*Bruits de perceuse*" << std::endl;
+		srand((unsigned int)time(0));
 
-			int i = rand()%2 + 1;
-			if (i == 1)
-				std::cout << "The target " << this->getTarget() << " has been robotomized." << std::endl;
-			else
-				std::cout << "Robotomization of target " << this->getTarget() << " has failed." << std::endl; 
-		}
-		
+		int i = rand()%2 + 1;
+		if (i == 1)
+			std::cout << "The target " << this->getTarget() << " has been robotomized." << std::endl;
+		else
+			std::cout << "Robotomization of target " << this->getTarget() << " has failed." << std::endl; 
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "The bureaucrate " << executor.getName() << " can't execute the form " << this->getName() << "." << std::endl;
-		std::cerr << e.what() << '\n';
-	}
-	
 }

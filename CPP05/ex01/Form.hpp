@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:35 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 15:54:29 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:32:33 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

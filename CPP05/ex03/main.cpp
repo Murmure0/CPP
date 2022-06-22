@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:50:49 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/21 16:45:21 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:23:24 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,24 @@ int main()
 		std::cout << " -~- Robot Form Test -~- " << std::endl;
 		std::cout << std::endl;
 
-		randomForm->beSigned(Arthur);
-		Arthur.signForm(*randomForm);
-		Arthur.executeForm(*randomForm);
-		std::cout << std::endl;
+		try{
+		randomForm->beSigned(Arthur);	}
+		catch (Form::GradeTooLowException &e)
+		{	std::cerr <<e.what() << std::endl; }
 
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::NotSignedException &e)
+		{	std::cerr <<e.what() << std::endl; }
 		std::cout << std::endl;
 		
 		randomForm->beSigned(John);
-		John.signForm(*randomForm);
-		John.executeForm(*randomForm);
 		randomForm->execute(John);
-		Arthur.executeForm(*randomForm);
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::ExecuteGradeTooLowException &e)
+		{	std::cerr << e.what() << std::endl;	}
+		std::cout << std::endl;
 		std::cout << std::endl;
 
 		delete randomForm;
@@ -62,6 +66,7 @@ int main()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
+	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << std::endl;
 
 
@@ -76,21 +81,26 @@ int main()
 		std::cout << " -~- Presidential pardon Form Test -~- " << std::endl;
 		std::cout << std::endl;
 
-		randomForm->beSigned(Arthur);
-		Arthur.signForm(*randomForm);
-		Arthur.executeForm(*randomForm);
-		std::cout << std::endl;
+		try{
+			randomForm->beSigned(Arthur);	}
+		catch (Form::GradeTooLowException &e)
+		{	std::cerr <<e.what() << std::endl; }
 
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::NotSignedException &e)
+		{	std::cerr <<e.what() << std::endl; }
 		std::cout << std::endl;
 		
 		randomForm->beSigned(John);
-		John.signForm(*randomForm);
-		John.executeForm(*randomForm);
 		randomForm->execute(John);
-		Arthur.executeForm(*randomForm);
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::ExecuteGradeTooLowException &e)
+		{	std::cerr << e.what() << std::endl;	}
 		std::cout << std::endl;
+		std::cout << std::endl;
+
 
 		delete randomForm;
 	}
@@ -100,6 +110,7 @@ int main()
 		std::cout << std::endl;
 	}
 		std::cout << std::endl;
+	std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 
 
@@ -111,23 +122,24 @@ int main()
 	
 	if (randomForm)
 	{
-		std::cout << " -~- Form Test -~- " << std::endl;
-		std::cout << std::endl;
+		try{
+			randomForm->beSigned(Arthur);	}
+		catch (Form::GradeTooLowException &e)
+		{	std::cerr <<e.what() << std::endl; }
 
-		randomForm->beSigned(Arthur);
-		Arthur.signForm(*randomForm);
-		Arthur.executeForm(*randomForm);
-		std::cout << std::endl;
-
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::NotSignedException &e)
+		{	std::cerr <<e.what() << std::endl; }
 		std::cout << std::endl;
 		
 		randomForm->beSigned(John);
-		John.signForm(*randomForm);
-		John.executeForm(*randomForm);
 		randomForm->execute(John);
-		Arthur.executeForm(*randomForm);
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::ExecuteGradeTooLowException &e)
+		{	std::cerr << e.what() << std::endl;	}
+		std::cout << std::endl;
 		std::cout << std::endl;
 
 		delete randomForm;
@@ -138,10 +150,11 @@ int main()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
+	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << std::endl;
 
 
-	std::cout << " -~- 4.Intern : Presidential pardon Form Test -~- " << std::endl;
+	std::cout << " -~- 4.Intern : Icecream stand Form Test -~- " << std::endl;
 	std::cout << std::endl;
 
 	randomForm = randomIntern.makeForm("icecream stand request", "garden");
@@ -152,21 +165,26 @@ int main()
 		std::cout << " -~- Form Test -~- " << std::endl;
 		std::cout << std::endl;
 
-		randomForm->beSigned(Arthur);
-		Arthur.signForm(*randomForm);
-		Arthur.executeForm(*randomForm);
-		std::cout << std::endl;
+		try{
+			randomForm->beSigned(Arthur);	}
+		catch (Form::GradeTooLowException &e)
+		{	std::cerr <<e.what() << std::endl; }
 
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::NotSignedException &e)
+		{	std::cerr <<e.what() << std::endl; }
 		std::cout << std::endl;
 		
 		randomForm->beSigned(John);
-		John.signForm(*randomForm);
-		John.executeForm(*randomForm);
 		randomForm->execute(John);
-		Arthur.executeForm(*randomForm);
-		randomForm->execute(Arthur);
+		try{
+			randomForm->execute(Arthur);	}
+		catch (Form::ExecuteGradeTooLowException &e)
+		{	std::cerr << e.what() << std::endl;	}
 		std::cout << std::endl;
+		std::cout << std::endl;
+
 
 		delete randomForm;
 	}

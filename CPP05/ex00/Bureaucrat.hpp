@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:21 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/20 12:54:00 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:45:06 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat{
 	void incrementGrade( void );
 	void decrementGrade( void );
 
+
 	class GradeTooHighException : public std::exception
 	{
 		public :
@@ -49,6 +50,7 @@ class Bureaucrat{
 			return("Grade too low, can't be lower than 150.");
 		}
 	};
+
 
 	private :
 
