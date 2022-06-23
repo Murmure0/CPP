@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
+#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/22 15:32:55 by maelle           ###   ########.fr        #
+#    Updated: 2022/06/23 11:46:48 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = Convert
 
 CC = c++
 
@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = 	main.cpp \
-
+			Convert.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
