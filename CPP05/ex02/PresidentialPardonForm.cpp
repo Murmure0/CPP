@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:32:57 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/22 14:21:23 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/27 11:05:21 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm " << this->getName() << "destructor." << std::endl;
+	std::cout << "PresidentialPardonForm " << this->getName() << " destructor." << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
@@ -45,5 +45,8 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 		throw Form::ExecuteGradeTooLowException();
 	}
 	else
+	{
+		executor.executeForm(*this);
 		std::cout << "Big news : " << this->getTarget() << " has been forgiven by Zaphod Beeblebrox." << std::endl;
+	}
 }

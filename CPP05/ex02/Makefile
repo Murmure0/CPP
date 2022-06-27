@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
+#    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/17 10:32:42 by maelle           ###   ########.fr        #
+#    Updated: 2022/06/27 11:21:36 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SOURCES = 	main.cpp \
 			RobotomyRequestForm.cpp \
 			PresidentialPardonForm.cpp \
 
+FILE = garden.shrubbery
+
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
 all :		$(NAME)
@@ -39,7 +41,7 @@ clean:
 		@echo "[\033[32m$(NAME) files cleaned !\033[0m]"
 	
 fclean: clean
-		@$(RM) $(NAME)
+		@$(RM) $(NAME) $(FILE)
 	
 re: fclean all
 

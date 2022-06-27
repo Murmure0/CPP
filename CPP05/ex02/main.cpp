@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:50:49 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/22 15:10:23 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/27 11:03:24 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 	std::cout << " -~- SHRUBBERY CREATION Form Test -~- " << std::endl;
 	std::cout << std::endl;
 
-	ShrubberyCreationForm Shrubbery("Potager", "jardin");
+	ShrubberyCreationForm Shrubbery("Shrubbery", "Garden");
 	std::cout << std::endl;
 
 	try{
@@ -41,11 +41,11 @@ int main()
 	std::cout << std::endl;
 	
 	Shrubbery.beSigned(John);
-	Shrubbery.execute(John);
 	try{
 		Shrubbery.execute(Arthur);	}
 	catch (Form::ExecuteGradeTooLowException &e)
 	{	std::cerr << e.what() << std::endl;	}
+	Shrubbery.execute(John);
 	std::cout << std::endl;
 	std::cout << std::endl;
 
@@ -69,11 +69,11 @@ int main()
 	std::cout << std::endl;
 	
 	Robotomy.beSigned(John);
-	Robotomy.execute(John);
 	try{
 		Robotomy.execute(Arthur);	}
 	catch (Form::ExecuteGradeTooLowException &e)
 	{	std::cerr << e.what() << std::endl;	}
+	Robotomy.execute(John);
 	std::cout << std::endl;
 	std::cout << std::endl;
 
@@ -96,11 +96,11 @@ int main()
 	std::cout << std::endl;
 	
 	Pardon.beSigned(John);
-	Pardon.execute(John);
 	try{
 		Pardon.execute(Arthur);	}
 	catch (Form::ExecuteGradeTooLowException &e)
 	{	std::cerr << e.what() << std::endl;	}
+	Pardon.execute(John);
 	std::cout << std::endl;
 	std::cout << std::endl;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:44 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/22 14:21:47 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/27 11:08:37 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : Form
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << "destructor." << std::endl;
+	std::cout << "RobotomyRequestForm " << this->getName() << " destructor." << std::endl;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const

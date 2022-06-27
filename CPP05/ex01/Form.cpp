@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:35:42 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/22 12:32:24 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/27 10:52:27 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Form::~Form()
 
 Form& Form::operator=(Form const & rhs)
 {
-	this->_isSigned = rhs._isSigned;
+	(void)rhs;
 	std::cout << "Warning: can't modify name and grades (const variable)." << std::endl;
 	return *this;
 }
@@ -70,7 +70,6 @@ void Form::beSigned(Bureaucrat & b)
 		b.signForm(*this);
 	}
 }
-
 
 std::ostream&	operator<<( std::ostream & o, Form & b )
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 10:31:02 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/22 14:31:08 by maelle           ###   ########.fr       */
+/*   Updated: 2022/06/27 11:08:40 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) 
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberyCreationForm " << this->getName() << "destructor." << std::endl;
+	std::cout << "ShrubberyCreationForm " << this->getName() << " destructor." << std::endl;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
