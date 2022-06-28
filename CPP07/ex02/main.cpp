@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 14:27:46 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/28 16:38:42 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/28 16:39:11 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/28 17:42:43 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Array.hpp"
 
-template<typename T>
-void iter(T *tab, size_t lenght, void (*f)(T&))
-{
-	for (size_t i =0; i < lenght; i++)
-	{
-		(*f)(tab[i]);
-	}
-}
+int main(){
 
-template<typename T>
-void applyF(T& x){
-	std::cout << x << std::endl;
+	Array<unsigned int> number(5);
+
+	std::cout << number.size() <<std::endl;
 }
