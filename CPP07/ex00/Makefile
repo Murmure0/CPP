@@ -6,11 +6,11 @@
 #    By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/28 10:55:27 by mberthet         ###   ########.fr        #
+#    Updated: 2022/06/28 14:13:00 by mberthet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex00
 
 CC = c++
 
@@ -19,7 +19,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SOURCES = 	main.cpp \
-			Data.cpp
+
+
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

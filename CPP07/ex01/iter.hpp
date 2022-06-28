@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:12:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/28 11:11:13 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/28 14:27:46 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/28 14:54:58 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include <iostream>
+#include <string>
 
-uintptr_t serialize(Data* ptr)
+template<typename T>
+void iter(T *tab, size_t lenght, void (*f)(T&))
 {
-	return reinterpret_cast<uintptr_t>(ptr);
+	for (size_t i =0; i < lenght; i++)
+	{
+		(*f)(tab[i]);
+	}
 }
 
-Data* deserialize(uintptr_t raw)
-{
-	return reinterpret_cast<Data*>(raw);
+template<typename T>
+void fUp(T& x){
+	std::cout << x << std::endl;
 }

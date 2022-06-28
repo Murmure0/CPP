@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:12:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/28 11:11:13 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/28 14:25:28 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/28 14:25:44 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include <iostream>
+#include <string>
 
-uintptr_t serialize(Data* ptr)
+template<typename T>
+void swap(T & x, T & y)
 {
-	return reinterpret_cast<uintptr_t>(ptr);
+	T z;
+
+	z = x;
+	x = y;
+	y = z;
 }
 
-Data* deserialize(uintptr_t raw)
+template<typename T>
+T min(T x, T y)
 {
-	return reinterpret_cast<Data*>(raw);
+	if (x >= y)
+		return y;
+	else
+		return x;
+}
+
+template<typename T>
+T max(T x, T y)
+{
+	if(x <= y)
+		return y;
+	else
+		return x;
 }

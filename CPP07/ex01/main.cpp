@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:12:55 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/28 11:11:13 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/28 14:27:14 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/28 14:52:38 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "iter.hpp"
 
-uintptr_t serialize(Data* ptr)
+int main()
 {
-	return reinterpret_cast<uintptr_t>(ptr);
-}
+	char tab[] = "bonjour, j'aime crier !";
+	int i = sizeof(tab);
 
-Data* deserialize(uintptr_t raw)
-{
-	return reinterpret_cast<Data*>(raw);
+	iter(tab, i, fUp<char>(*tab));
 }

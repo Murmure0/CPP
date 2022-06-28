@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 16:11:10 by maelle            #+#    #+#             */
-/*   Updated: 2022/06/28 10:55:31 by mberthet         ###   ########.fr       */
+/*   Created: 2022/06/28 14:11:36 by mberthet          #+#    #+#             */
+/*   Updated: 2022/06/28 14:25:42 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "whatever.hpp"
 
-int main()
-{
-	Data me;
-	uintptr_t scripted_me;
-	Data* new_me;
+int main( void ) {
+	int a = 2;
+	int b = 3;
 
-	me.name = "Aby";
-	me.food = "pizza & donuts";
-	me.age = 18;
-	me.size = 1.65;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-	std::cout << me.name << std::endl;
-	std::cout << me.food << std::endl;
-	std::cout << me.age << std::endl;
-	std::cout << me.size << std::endl;
-	std::cout << std::endl;
-	
-	scripted_me = serialize(&me);
-	new_me = deserialize(scripted_me);
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
 
-	std::cout << new_me->name << std::endl;
-	std::cout << new_me->food << std::endl;
-	std::cout << new_me->age << std::endl;
-	std::cout << new_me->size << std::endl;
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	return 0;
 }

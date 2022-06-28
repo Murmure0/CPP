@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:51:11 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/27 13:34:36 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:10:06 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Base * generate(void)
 	return (NULL);
 }
 
-
 void identify(Base* p)
 {
 	Base * idBase;
@@ -48,21 +47,21 @@ void identify(Base* p)
 	idBase = dynamic_cast<A *>(p);
 	if (idBase != NULL)
 	{
-		std::cout << "Class A identify !" << std::endl;
+		std::cout << "By pointer : Class A identify." << std::endl;
 		return ;
 	}
 
 	idBase = dynamic_cast<B *>(p);
 	if (idBase != NULL)
 	{
-			std::cout << "Class B identify !" << std::endl;
+			std::cout << "By pointer : Class B identify." << std::endl;
 		return ;
 	}
 
 	idBase = dynamic_cast<C *>(p);
 	if (idBase != NULL)
 	{
-			std::cout << "Class C identify !" << std::endl;
+			std::cout << "By pointer : Class C identify." << std::endl;
 		return ;
 	}
 
@@ -79,31 +78,31 @@ void identify(Base& p)
 		std::cout << "Ref : Class A identify." << std::endl;
 	}
 	catch (std::bad_cast &bc){
-	//	std::cout << "Not class A" << std::endl;
 	}
 	try {
 		idBase = dynamic_cast<B&>(p);
 		std::cout << "Ref : Class B identify." << std::endl;
 	}
 	catch (std::bad_cast &bc){
-		//std::cout << "Not class B" << std::endl;
 	}
 	try {
 		idBase = dynamic_cast<C&>(p);
 		std::cout << "Ref : Class C identify." << std::endl;
 	}
 	catch (std::bad_cast &bc){
-		//std::cout << "Not class C" << std::endl;
 	}
 }
 
 int main()
 {
+	std::cout << "Generating new random class betwen A, B and C : " << std::endl;
+	std::cout << std::endl;
 	Base * GuessBase;
 
 	GuessBase = generate();
 	identify(GuessBase);
 	identify(*GuessBase);
+	std::cout << std::endl;
 
 	delete GuessBase;
 	return 0;
