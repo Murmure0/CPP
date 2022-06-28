@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:40:09 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/23 15:11:21 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:09:40 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include <iomanip>
 #include <string>
 #include <cstdlib>
+#include <cstring>
+#include <climits>
+#include <math.h>
 
 class Convert{
 
 	public :
-	Convert(); //obligatoire ?
 	Convert(std::string str);
 	Convert(Convert const & src);
 	~Convert();
@@ -49,6 +51,15 @@ class Convert{
 			return("Non displayable");
 		}
 	};
+
+	class InvalidInput : public std::exception
+	{
+		public :
+		virtual const char * what() const throw(){
+			return("Invalid Input");
+		}
+	};
+
 
 	private :
 

@@ -6,7 +6,7 @@
 #    By: maelle <maelle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 16:08:29 by mberthet          #+#    #+#              #
-#    Updated: 2022/06/22 15:33:02 by maelle           ###   ########.fr        #
+#    Updated: 2022/06/24 16:29:38 by maelle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,13 @@ NAME = ex01
 
 CC = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+#CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
 SOURCES = 	main.cpp \
-
+			Data.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
