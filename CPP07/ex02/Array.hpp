@@ -6,13 +6,12 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 16:44:48 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/28 17:42:59 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:07:15 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-//#include "Array.tpp"
 #include <iostream>
 #include <string>
 
@@ -21,40 +20,51 @@ class Array{
 
 	public :
 
-	Array<T>(): _tab(new Array<T>[3]), _lenght(0) {};
+	Array(): _tab(new T[3]), _lenght(0) {}
 	
-	Array(unsigned int n) : _tab(new Array<T>[n] = 0), _lenght(n) {};
+	Array(unsigned int n) : _tab(new T[n]), _lenght(n) {
+		for (unsigned int i = 0; i < n; i++)
+			_tab[i] = 123;
+	}
 	
-	Array<T>(Array<T> const & src){
+	Array(Array const & src){
 		
 		_lenght = src._lenght;
 
-		_tab = new Array<T>[_lenght];
+		_tab = new T[_lenght];
 		
-		for(int i = 0; i < _lenght; i++)
+		for(unsigned int i = 0; i < _lenght; i++)
 		{
 			_tab[i] = src._tab[i];
 		}
 	};
 
-	~Array<T>() {
+	~Array() {
 		delete [] _tab;
 	};
 
-	Array<T> const & operator=(Array<T> const & rhs){
+	Array & operator=(Array const & rhs){
 		_lenght = rhs._lenght;
 		delete _tab;
-		_tab = new Array<T>[_lenght];
+		_tab = new T[_lenght];
 		for(int i = 0; i < _lenght; i++)
 		{
 			_tab[i] = rhs._tab[i];
 		}
-	};
+		return *this;
+	}
 
 	unsigned int size( void ){
 		return _lenght;
-	};
+	}
 
+	// T getTab( unsigned int i ){
+	// 	if(i >= _lenght)
+	// 		throw Array::InvalidIdex();
+	// 	else
+	// 		return _tab[i];
+	// }
+	
 	class InvalidIdex : public std::exception
 	{
 		public :
@@ -64,8 +74,17 @@ class Array{
 		}
 	};
 
+	T & operator[](unsigned int index)
+	{
+		if(index >= _lenght)
+			throw Array::InvalidIdex();
+		else
+			return _tab[index];
+	}
+
+	
 	private:
 	
-	unsigned int	_lenght;
 	T *				_tab;
+	unsigned int	_lenght;
 };

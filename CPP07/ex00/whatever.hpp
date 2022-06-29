@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 14:25:28 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/28 14:25:44 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:36:18 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,32 @@ void swap(T & x, T & y)
 template<typename T>
 T min(T x, T y)
 {
-	if (x >= y)
-		return y;
-	else
-		return x;
+	return ((x < y) ? x : y);
 }
 
 template<typename T>
 T max(T x, T y)
 {
-	if(x <= y)
-		return y;
-	else
-		return x;
+	return ((x > y) ? x : y);
 }
+
+class Random {
+
+	public:
+	
+	Random() :_x(11) {}
+	Random( int x ) : _x( x ) {}
+	~Random() {}
+	
+	Random const & operator=(Random const & rhs)
+	{
+		_x = rhs._x;
+		return *this;
+	}
+
+	int getN(void) {return _x;};
+
+	private:
+
+	int _x; 
+ }; 
