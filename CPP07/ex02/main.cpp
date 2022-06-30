@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 16:39:11 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/30 11:42:38 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:04:25 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ int main(){
 	for(int i = 0; i <= n; i++)
 	{
 		try{
-			std::list<int>::iterator it = numbers[i].begin();
-			std::cout << "Array[" << i << "] content : " << *it << std::endl;}
+			//std::list<int>::iterator it = numbers[i].begin();
+			// std::cout << "Array[" << i << "] content : " << *it << std::endl;}
+			std::cout << "Array[" << i << "] content : " << *std::begin(numbers[i]) << std::endl;}
 		catch(const std::exception &e)
 		{
 			std::cout << e.what() << std::endl;}
