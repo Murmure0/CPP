@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 14:11:36 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/29 13:36:26 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/30 09:21:17 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main( void ) {
 	int a = 2;
 	int b = 3;
-	Random yes(2);
-	Random no(5);
+	Random yes(2.56f);
+	Random no(5.89f);
 
 	::swap<int>( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;

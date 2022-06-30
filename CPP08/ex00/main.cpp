@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:28:18 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/29 15:14:19 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/30 10:11:35 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,34 @@ int main(){
 		easyfind(lst, 10);	}
 	catch(const std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;	}
+
+	std::vector<int> v_lst;
+
+	for(int i = 20; i < 26; i++)
+		v_lst.push_back(i);
+	for_each(v_lst.begin(), v_lst.end(), display);
+	easyfind(v_lst, 21);
+	try{
+		easyfind(v_lst, 42);
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::deque<int> d_lst;
+
+	for(int i = 100; i < 106; i++)
+		d_lst.push_back(i);
+	for_each(d_lst.begin(), d_lst.end(), display);
+	easyfind(d_lst, 102);
+	try{
+		easyfind(d_lst, 500);
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	return 0;
 }

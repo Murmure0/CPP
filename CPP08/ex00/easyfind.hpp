@@ -6,7 +6,7 @@
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:29:28 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/29 15:27:56 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/06/30 10:10:26 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <list>
 #include <vector>
+#include <deque>
 #include <iostream>
 #include <string>
 
