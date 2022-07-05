@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:12:29 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/30 18:12:49 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:26:54 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,18 @@ int main()
 	vOkay.push_back(3);
 
 	try {
-		for(int i =0; i < 10; i++)
-			spanData.addNumber(i);
+		spanData.addNumber(10);
+		spanData.addNumber(1);
+		spanData.addNumber(15);
+		spanData.addNumber(56);
+		spanData.addNumber(14);
+		spanData.addNumber(100);
+		spanData.addNumber(0);
+		spanData.addNumber(2);
+		spanData.addNumber(1);
+		spanData.addNumber(0);
+		
+		spanData.addNumber(98);
 	}
 	catch(std::exception &e)
 	{
