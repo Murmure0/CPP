@@ -5,35 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 10:37:40 by mberthet          #+#    #+#             */
-/*   Updated: 2022/07/05 11:52:16 by mberthet         ###   ########.fr       */
+/*   Created: 2022/07/01 14:27:43 by maelle            #+#    #+#             */
+/*   Updated: 2022/07/05 15:00:32 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <stack>
-#include <iostream>
 #include <list>
+#include <iostream>
+#include <string>
 
 template <typename T, typename Container = std::deque<T> >
-class MutantStack : public std::stack<T>
-{
-	public :
+class MutantStack : public std::stack<T, Container>{
 
-	MutantStack() :  MutantStack<T, Container>::stack(){};
-	MutantStack(MutantStack<T, Container> const & src) : MutantStack<T, Container>::stack(src) {};
-	~MutantStack() {};
+	public:
 
-	MutantStack & operator=(MutantStack const & rhs)
+	MutantStack() : MutantStack<T, Container>::stack(){}
+	MutantStack(MutantStack<T, Container> & src) : MutantStack<T, Container>::stack(src) {}
+
+	MutantStack<T, Container>& operator=(const MutantStack<T, Container>& rhs)
 	{
-		if (this != &rhs)
-			this->MutantStack::stack::operator=(rhs);
+		this->MutantStack<T, Container>::stack::operator=(rhs);
 		return *this;
 	}
 
+	virtual ~MutantStack() {};
 
-	typedef typename Container::iterator		iterator;
+	typedef typename Container::iterator iterator;
 
-	iterator				begin(){ return this->c.begin();}
-	iterator				end(){ return this->c.end();}
+	iterator	begin()
+	{
+		return this->c.begin();
+	}
+
+	iterator end()
+	{
+		return this->c.end();
+	}
 };

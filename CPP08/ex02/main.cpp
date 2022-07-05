@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 10:37:47 by mberthet          #+#    #+#             */
-/*   Updated: 2022/07/05 11:53:59 by mberthet         ###   ########.fr       */
+/*   Created: 2022/07/01 14:27:12 by maelle            #+#    #+#             */
+/*   Updated: 2022/07/05 15:00:19 by mberthet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main()
 {
 	MutantStack<int> mstack;
-
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
@@ -24,7 +23,6 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -36,28 +34,30 @@ int main()
 	++it;
 	}
 	std::stack<int> s(mstack);
-	
-	
-	std::list<int> mstack_lst;
 
-	mstack_lst.push_back(5);
-	mstack_lst.push_back(17);
-	std::cout << mstack_lst.back() << std::endl;
-	mstack_lst.pop_back();
-	std::cout << mstack_lst.size() << std::endl;
-	mstack_lst.push_back(3);
-	mstack_lst.push_back(5);
-	mstack_lst.push_back(737);
-	//[...]
-	mstack_lst.push_back(0);
-	std::list<int>::iterator it_lst = mstack_lst.begin();
-	std::list<int>::iterator ite_lst = mstack_lst.end();
-	++it_lst;
-	--it_lst;
-	while (it_lst != ite_lst)
+	std::cout << "Remplace MutantStack by List" << std::endl;
+
+	std::list<int> mstack2;
+	mstack2.push_back(5);
+	mstack2.push_back(17);
+	std::cout << mstack2.back() << std::endl;
+	mstack2.pop_back();
+	std::cout << mstack2.size() << std::endl;
+	mstack2.push_back(3);
+	mstack2.push_back(5);
+	mstack2.push_back(737);
+	
+	mstack2.push_back(0);
+	std::list<int>::iterator it2 = mstack2.begin();
+	std::list<int>::iterator ite2 = mstack2.end();
+	++it2;
+	--it2;
+	while (it2 != ite2)
 	{
-	std::cout << *it_lst << std::endl;
-	++it_lst;
+	std::cout << *it2 << std::endl;
+	++it2;
 	}
+	std::list<int> s2(mstack2);
+	
 	return 0;
 }

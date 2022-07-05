@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mberthet <mberthet@student.s19.be>         +#+  +:+       +#+        */
+/*   By: maelle <maelle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:12:53 by mberthet          #+#    #+#             */
-/*   Updated: 2022/06/30 17:54:40 by mberthet         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:38:18 by maelle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 #include <iostream>
 #include <string>
-#include <limits>
+#include <climits>
 #include <vector>
+#include <algorithm>
 
 class Span{
 
@@ -26,6 +27,9 @@ class Span{
 	~Span();
 
 	Span & operator=(Span const & rhs);
+
+	unsigned int getN();
+	unsigned int getCurrentIndex();
 
 	void			addNumber(int number);
 	unsigned int	shortestSpan();
@@ -58,7 +62,7 @@ class Span{
 
 	private:
 
-	int* _tab;
+	std::vector<int> _v;
 	unsigned int _N;
 	unsigned int _currentIndex;
 
