@@ -33,6 +33,7 @@ int main(){
 	{
 		std::cerr << e.what() << std::endl;	}
 
+
 	std::vector<int> v_lst;
 
 	for(int i = 20; i < 26; i++)
@@ -46,6 +47,7 @@ int main(){
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
 
 	std::deque<int> d_lst;
 

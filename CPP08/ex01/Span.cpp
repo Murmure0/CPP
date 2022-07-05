@@ -56,7 +56,6 @@ void	Span::addNumber(int number)
 	else
 	{
 		_tab[_currentIndex] = number;
-		//std::cout << "Value " << number << " added at index " << _currentIndex << std::endl;
 		_currentIndex++;
 	}
 }

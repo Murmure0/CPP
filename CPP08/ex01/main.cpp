@@ -17,7 +17,7 @@ int main()
 	Span spanData(10);
 	Span spanData2(5);
 
-	// std::vector<int> vTooLarge = {5, 6, 89, 98, 100, 12};
+	 std::vector<int> vTooLarge(5, 6, 89, 98, 100, 12);
 	// std::vector<int> vOkay = {5, 6, 89, 98, 100};
 	std::vector<int> vTooLarge;
 	vTooLarge.push_back(1);
